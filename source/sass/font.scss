@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'HeliosExtBlack';
+  src: url("../fonts/HeliosExtBlack_22347.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HeliosExtBold';
+  src: url("../fonts/HeliosExt-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HeliosExt';
+  src: url('../fonts/HeliosExt.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'MullerLight';
+  src: url('../fonts/MullerLight.eot');
+  src: local('Muller Light'), local('MullerLight'),
+      url('../fonts/MullerLight.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/MullerLight.woff2') format('woff2'),
+      url('../fonts/MullerLight.woff') format('woff'),
+      url('../fonts/MullerLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'GothamProBlack';
+	src: url('../fonts/GothamPro-Black.eot');
+	src: local('Gotham Pro Black'), local('GothamPro-Black'),
+		url('../fonts/GothamPro-Black.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/GothamPro-Black.woff') format('woff'),
+		url('../fonts/GothamPro-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}

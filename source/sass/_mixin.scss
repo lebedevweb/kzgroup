@@ -1,0 +1,18 @@
+// Удаляем все стили для кнопок
+
+@mixin btn-destroy{
+	border: none;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+	cursor: pointer;
+}
+
+// Удаляем стили списка
+@mixin list-destroy{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
