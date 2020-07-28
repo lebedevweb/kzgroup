@@ -1,0 +1,382 @@
+
+// Главный заголовок
+
+%title-main-screen {
+
+	margin: 0;
+	padding: 0;
+
+	font-family: $font-bold-title;
+  font-style: normal;
+	font-size: 36px;
+	line-height: 37px;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+	padding-bottom: 40px;
+}
+
+
+
+@media(min-width: 767px){
+
+	%title-main-screen {
+		font-style: normal;
+		font-size: 48px;
+		line-height: 114%;
+		letter-spacing: 0.02em;
+		text-shadow: none;
+
+		padding-bottom: 0px;
+	}
+
+}
+
+
+@media(min-width: 1280px){
+	%title-main-screen {
+		font-size: 64px;
+		line-height: 114%;
+	}
+	
+}
+
+@media(min-width: 1919px){
+	%title-main-screen {
+		font-size: 90px;
+		line-height: 96.5%;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	}
+	
+}
+
+// Заголовок блоков
+
+%block-title{
+	margin: 0;
+	padding: 0;
+	font-family: $font-bold-2-title;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 23px;
+
+	color: #000000;
+}
+@media(min-width: 767px){
+	%block-title{
+
+		font-size: 26px;
+		line-height: 30px;
+	}
+}
+
+@media(min-width: 1280px){
+	%block-title{
+
+		font-size: 36px;
+		line-height: 40px;
+	}
+}
+
+
+
+@media(min-width: 1919px){
+	%block-title{
+
+		font-size: 46px;
+		line-height: 49px;
+	}
+}
+
+
+// Текст Upper
+
+%upper-text{
+	margin: 0;
+	padding: 0;
+	font-family: $font-regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 22px;
+	text-transform: uppercase;
+
+	color: #000000;
+}
+
+@media(min-width: 767px){
+	%upper-text{
+
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+
+@media(min-width: 1280px){
+	%upper-text{
+
+		font-size: 25px;
+		line-height: 40px;
+	}
+}
+
+@media(min-width: 1919px){
+	%upper-text{
+
+		font-size: 30px;
+		line-height: 48px;
+	}
+}
+
+
+// Заголовок на фоне картинки
+%block-title-light{
+	margin:0;
+	padding: 0;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 26px;
+	/* or 118% */
+
+	text-transform: uppercase;
+
+	font-family: $font-regular;
+	color: $light-grey-color;
+}
+
+@media(min-width: 767px){
+	%block-title-light{
+
+		font-size: 26px;
+		line-height: 31px;
+	}
+}
+
+@media(min-width: 1280px){
+	%block-title-light{
+
+		font-size: 36px;
+		line-height: 43px;
+	}
+}
+
+@media(min-width: 1919px){
+	%block-title-light{
+
+		font-size: 46px;
+		line-height: 55px;
+	}
+}
+
+// Список на фоне картинки
+
+%block-list-light{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 87.6%;
+	
+	text-transform: lowercase;
+	color: #FFFFFF;
+	font-family: $font-regular;
+	color: $light-grey-color;
+}
+
+@media(min-width: 767px){
+	%block-list-light{
+
+		font-size: 25px;
+		line-height: 120.1%;
+	}
+}
+
+@media(min-width: 1280px){
+	%block-list-light{
+
+		font-size: 30px;
+		line-height: 120.1%;
+	}
+}
+
+@media(min-width: 1919px){
+	%block-list-light{
+
+		font-size: 36px;
+		line-height: 87.6%;
+	}
+}
+
+
+// Текстовый блок , параграф
+
+%block-text{
+	margin: 0;
+	padding: 0;
+	font-family: $font-text-light;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 20px;
+
+	color: $grey-text-paragraf;
+
+}
+
+@media(min-width: 767px){
+	%block-text{
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+
+@media(min-width: 1280px){
+	%block-text{
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+
+@media(min-width: 1919px){
+	%block-text{
+		font-size: 18px;
+		line-height: 28px;
+	}
+}
+
+
+// Кнопка 
+
+%btn-bordered{
+	box-sizing: border-box;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #000000;
+	color: #000000;
+	font-family: $font-regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 20px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	outline: none;
+	cursor: pointer;
+	padding: 13px 0px;
+	width: 100%;
+}
+
+
+@media(min-width: 767px){
+	%btn-bordered{
+
+		padding: 13px 60px;
+		width: auto;
+	}
+}
+
+@media(min-width: 1280px){
+	%btn-bordered{
+
+		padding: 15px 80px;
+	}
+}
+
+
+// Красные цифры
+
+%red-number{
+	font-family: $font-for-number;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 52px;
+	line-height: 71px;
+	letter-spacing: -0.025em;
+
+	color: $red-color;
+}
+
+
+@media(min-width: 1280px){
+	%red-number{
+		font-size: 64px;
+		line-height: 87px;
+
+	}
+}
+@media(min-width: 1919px){
+	%red-number{
+		font-size: 85px;
+		line-height: 116px;
+
+	}
+}
+// Маленький подзаголовок
+
+%small-subtitle{
+	margin: 0;
+	padding: 0;
+	font-family: $font-bold-2-title;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 19px;
+
+	text-transform: uppercase;
+
+	color: $black-grey;
+
+}
+@media(min-width: 1280px){
+	%small-subtitle{
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+@media(min-width: 1919px){
+	%small-subtitle{
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+// Текстовый параграф маленький
+%block-text-smallest{
+	margin: 0;
+	padding: 0;
+	font-family: $font-text-light;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	color: $grey-text-paragraf;
+}
+@media(min-width: 1280px){
+	%block-text-smallest{
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+@media(min-width: 1919px){
+	%block-text-smallest{
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+
+
+// Скролл-бар
+
+%scroll-line{
+	// width: 100%;
+	height: 3px;
+	background-color: #E6E6E6;
+}
+
+%scroll-drag{
+	background: $red-color;
+	border-radius: 0px;
+}

@@ -1,20 +1,20 @@
-@import 'font';
-@import '_variables';
-@import '_extend';
-@import '_mixin';
+@import 'utils/font';
+@import 'utils/_variables';
+@import 'utils/_extend';
+@import 'utils/_mixin';
 
 
-@import 'swiperbundle';
+@import 'libs/swiperbundle';
 // @import 'header';
 
-@import 'main';
-@import 'about';
-@import 'advant';
-@import 'zavod';
+@import 'pages/kirovets/main';
+@import 'pages/kirovets/about';
+@import 'pages/kirovets/advant';
+@import 'pages/kirovets/zavod';
 
-@import 'statistics';
+@import 'pages/kirovets/statistics';
 
-@import 'tabs';
+@import 'pages/kirovets/tabs';
 
 body{
 	margin: 0;
