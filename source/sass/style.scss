@@ -1,22 +1,23 @@
-@import 'font';
-@import '_variables';
-@import '_extend';
-@import '_mixin';
+@import 'utils/font';
+@import 'utils/_variables';
+@import 'utils/_extend';
+@import 'utils/_mixin';
 
 
-@import 'swiperbundle';
+@import 'libs/swiperbundle';
 // @import 'header';
 
-@import 'main';
-@import 'about';
-@import 'advant';
-@import 'zavod';
+@import 'pages/kirovets/main';
+@import 'pages/kirovets/about';
+@import 'pages/kirovets/advant';
+@import 'pages/kirovets/zavod';
 
-@import 'company-group';
+@import 'pages/kirovets/statistics';
 
-@import 'statistics';
+@import 'pages/kirovets/tabs';
 
-@import 'tabs';
+// company_group
+@import 'pages/company_group/_company-group';
 
 body{
 	margin: 0;
@@ -25,10 +26,6 @@ body{
 	background-color: #ffffff;
 }
 
-a {
-	text-decoration: none;
-	font-style: normal;
-}
 
 // Контейтер
 
