@@ -12,6 +12,8 @@
 @import 'advant';
 @import 'zavod';
 
+@import 'company-group';
+
 @import 'statistics';
 
 @import 'tabs';
@@ -23,6 +25,10 @@ body{
 	background-color: #ffffff;
 }
 
+a {
+	text-decoration: none;
+	font-style: normal;
+}
 
 // Контейтер
 
