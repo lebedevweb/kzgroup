@@ -133,10 +133,8 @@ gulp.task("sprite", function () {
 gulp.task("copy", function () {
   return gulp.src([
     "./source/fonts/**/**",
-    "./source/audio/**/**",
+    "./source/video/**/**",
     "./source/img/**",
-    "./source/mailer/**",
-    "./source/en/**",
     "./source/*.ico"
   ], {
       base: "./source"  // корень откуда копировать

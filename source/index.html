@@ -6,224 +6,589 @@
 	<title>Трактор "Кировец"</title>
 	<link rel="stylesheet" href="./css/style.min.css">
 </head>
-<body class="kirovets">
 
-	<!-- <header class="header">
-		<div class="container">
-			<button class="header__burger">
 
-			</button>
+<body class="kirovets"  >
+
+
 	
-	
-			<div class="header__logo logo">
-				<img class="logo__img" src="" alt="">
-					<p class="logo__text">Кировский завод</p>
+
+
+	<nav class="traktors__nav">
+		<ul class="traktors__nav-list">
+			<li class="traktors__nav-item">
+				<a data-scroll class="traktors__nav-link active " href="#year-1924">1924</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a data-scroll class="traktors__nav-link" href="#year-1934">1934</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a data-scroll class="traktors__nav-link" href="#year-1962">1962</a>
+			</li> 
+			<!-- <li class="traktors__nav-item">
+				<a class="traktors__nav-link" href="#">1975</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a class="traktors__nav-link" href="#">1985</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a class="traktors__nav-link" href="#">1995</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a class="traktors__nav-link" href="#">2000</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a class="traktors__nav-link" href="#">2012</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a class="traktors__nav-link" href="#">2014</a>
+			</li>
+			<li class="traktors__nav-item">
+				<a class="traktors__nav-link" href="#">2020</a>
+			</li> -->
+		</ul>
+	</nav>
+<main>
+	<div data-scroll>
+		
+		<section class="kirovets_main parallax__item">
+			<div class="parallax__img-wrap">
+				<div class="parallax__img parallax__img--kirovets_main">
+					<video  loop="" class="parallax__img-video">
+						<source src="./video/video-playback.mp4" type="video/mp4">
+				</video>
+				</div>
 			</div>
-		</div>
-	</header> -->
 
-			<section class="kirovets_main">
-				<div class="container">
-					<div class="kirovets_main__wrapper">
-						<h1 class="kirovets_main__title">Трактор <br>«Кировец»</h1>
-					</div>
+			<!-- <div class="parallax__img-wrap">
+				<video autoplay="autoplay" muted="" loop="" class="parallax__img-video">
+						<source src="./video/video-playback.mp4" type="video/mp4">
+				</video>
+			</div> -->
+			<div class="container">
+				<div class="kirovets_main__wrapper">
+					<h1 class="kirovets_main__title">Трактор <br>«Кировец»</h1>
 				</div>
+			</div>
 
-				<button class="kirovets_button__video-controls"></button>
-			</section>
+			<div class="button__video-controls-wrap">
+				<button class="kirovets_button__video-controls kirovets_button__video-controls--play"></button>
 
-
+				<button class="kirovets_button__video-controls kirovets_button__video-controls--sound"></button>
+			</div>
 			
+		</section>
 
-			<section class="kirovets_about">
-				<div class="container">
-					<h2 class="kirovets_about__title">
-						<span class="red-accent">«Кировец»</span>
-						 – легендарный трактор, выпускается на Кировском заводе с 1962 года
-					</h2>
-
-					<p class="kirovets_about__desc">Предназначен для выполнения сельскохозяйственных, транспортных, дорожно-строительных и других работ.</p>
-				</div>
-
-				<ul class="kirovets_social__btn-list">
-					<li class="kirovets_social__btn-item kirovets_social__btn-item--share" style="background-image: url(./img/social-share.svg);">
-						<a class="kirovets_social__btn-link" href=""></a>
-					</li>
-					<li class="kirovets_social__btn-item kirovets_social__btn-item--message" style="background-image: url(./img/social-message.svg);">
-						<a class="kirovets_social__btn-link" href=""></a>
-					</li>
-
-				</ul>
-			</section>
-	
-
-			<section class="kirovets_tabs">
-
-
-				<div class="container">
-					<h2 class="kirovets_tabs__title">Современный «Кировец»</h2>
-				</div>
-
-
-					<div class="kirovets_tabs__nav">
-						<div class="container">
-							<ul class="kirovets_tabs__list">
-								<li class="kirovets_tabs__nav-item">
-									<button class="kirovets_tabs__nav-btn active">модель к-7м</button>
-								</li>
-								<li class="kirovets_tabs__nav-item">
-									<button class="kirovets_tabs__nav-btn">модель к-5</button>
-								</li>
-							</ul>
-						
-						</div>
-					</div>
-
-					<div class="container">
-						<div class="swiper-container kirovets_tabs__container">
-							
-								<ul class="kirovets_tabs__slider swiper-wrapper">
-									<li class="kirovets_tabs__slide swiper-slide">
-
-
-										<!-- <div class="kirovets_tabs__img">
-											<img src="" alt="">
-										</div> -->
-										<div class="swiper-container kirovets_tabs__features">
-											<ul class="kirovets_tabs__features-list swiper-wrapper">
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">кабина</h3>
-													<p class="kirovets_tabs__features-desc">Комфортабельная шумоизолированная кабина с кондиционером и подрессоренным креслом</p>
-												</li>
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">Гидросистема</h3>
-													<p class="kirovets_tabs__features-desc">управления поворотом трактора оснащена отдельным насосом производительностью 80 л/мин</p>
-												</li>
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">Шины</h3>
-													<p class="kirovets_tabs__features-desc">увеличенной размерности, что дает возможность работать с более тяжелыми прицепными агрегатами и одновременно снижает нагрузку на грунт</p>
-												</li>
-
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">Шины</h3>
-													<p class="kirovets_tabs__features-desc">увеличенной размерности, что дает возможность работать с более тяжелыми прицепными агрегатами и одновременно снижает нагрузку на грунт</p>
-												</li>
-											</ul>
-											<div class="swiper-scrollbar kirovets_swiper-scrollbar kirovets_swiper-scrollbar--tabs"></div>
-										</div>
-
-
-									</li>
-
-
-									<li class="kirovets_tabs__slide swiper-slide">
-
-
-										<!-- <div class="kirovets_tabs__img">
-											<img src="" alt="">
-										</div> -->
-										<div class="swiper-container kirovets_tabs__features">
-											<ul class="kirovets_tabs__features-list swiper-wrapper">
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">кабина</h3>
-													<p class="kirovets_tabs__features-desc">Комфортабельная шумоизолированная кабина с кондиционером и подрессоренным креслом</p>
-												</li>
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">Гидросистема</h3>
-													<p class="kirovets_tabs__features-desc">управления поворотом трактора оснащена отдельным насосом производительностью 80 л/мин</p>
-												</li>
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">Шины</h3>
-													<p class="kirovets_tabs__features-desc">увеличенной размерности, что дает возможность работать с более тяжелыми прицепными агрегатами и одновременно снижает нагрузку на грунт</p>
-												</li>
-
-												<li class="kirovets_tabs__features-item swiper-slide">
-													<h3 class="kirovets_tabs__features-subtitle">Шины</h3>
-													<p class="kirovets_tabs__features-desc">увеличенной размерности, что дает возможность работать с более тяжелыми прицепными агрегатами и одновременно снижает нагрузку на грунт</p>
-												</li>
-											</ul>
-											<div class="swiper-scrollbar kirovets_swiper-scrollbar kirovets_swiper-scrollbar--tabs"></div>
-										</div>
-
-
-									</li>
-								</ul>
-							
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="kirovets_zavod">
-				<div class="container">
-					<h2 class="kirovets_zavod__title kirovets_zavod__title--desktop">Производитель тракторов «Кировец» – АО «Петербургский тракторный завод»</h2>
-					<div class="kirovets_zavod-wrapper">
-						
-						<div class="kirovets_zavod-img-wrap">
-							<img class="kirovets_zavod-img" src="./img/logo-big.svg" alt="">
-						</div>
-						
-						<div class="kirovets_zavod-text">
-							<h2 class="kirovets_zavod__title kirovets_zavod__title--all">Производитель тракторов «Кировец» – АО «Петербургский тракторный завод»</h2>
-							<p>АО «Петербургский тракторный завод» входит в группу компаний «Кировский завод». Это единственный российский производитель мощных колесных сельскохозяйственных тракторов, крупнейший поставщик дорожно-строительной и специальной техники. Компания поставляет свою продукцию нефтегазодобывающим компаниям, угледобывающим, металлургическим холдингам и сельскохозяйственным предприятиям, производящим до 70% основных продовольственных товаров России.</p>
-							<p>На собственной площадке предприятия, занимающей около 195 000 кв. м., ежегодно выпускается 2500 тракторов. Компания производит технику, соответствующую высоким мировым стандартам. Продукция АО «Петербургский тракторный завод» экспортируется в 14 стран мира. Тракторы предприятия широко востребованы на рынке Казахстана, поставляются в ряд западноевропейских стран (Франция, Германия, Чехия, Болгария и т.д), а также в Австралию, Канаду и США.</p>
-							<p>Отличительные черты техники, производимой на АО «Петербургский тракторный завод», – это высокий уровень качества и надежность техники, европейский дизайн и комфорт для оператора.</p>
-							<button class="button button--details kirovets_button">Подробнее</button>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="kirovets_advant">
-				<div class="container">
-					<h2 class="kirovets_advant__title">Серийное производство трактора «Кировец»</h2>
-					<ul class="kirovets_advant__list">
-						<li class="kirovets_advant__item">Современное оборудование</li>
-						<li class="kirovets_advant__item">Квалифицированный персонал</li>
-						<li class="kirovets_advant__item">контроль качества на всех этапах производства</li>
-					</ul>
-				</div>
-			</section>
-
-			<section class="kirovets_statistics">
-				<div class="container">
-					<h2 class="kirovets_statistics__title">Успех и востребованность трактора «Кировец»</h2>
-
-						<div class="swiper-container kirovets_statistics__slider">
-							<ul class="kirovets_statistics__list swiper-wrapper">
-								<li class="kirovets_statistics__item swiper-slide">
-									<span class="kirovets_statistics__number">600 000</span>
-									<h3 class="kirovets_statistics__subtitle">тракторов «Кировец» выпущено</h3>
-									<p class="kirovets_statistics__desc">Тракторы выпускаются с 1962 года, они востребованы в России, на территории бывшего СССР и в других странах мира.</p>
-								</li>
-
-								<li class="kirovets_statistics__item swiper-slide">
-									<span class="kirovets_statistics__number">14</span>
-									<h3 class="kirovets_statistics__subtitle">Стран для ЭКСПОРТA</h3>
-									<p class="kirovets_statistics__desc">Начиная с 1968 года было экспортировано 12 000 тракторов «Кировец» в 14 стран ближнего и дальнего зарубежья.</p>
-								</li>
-
-								<li class="kirovets_statistics__item swiper-slide">
-									<span class="kirovets_statistics__number">3 000</span>
-									<h3 class="kirovets_statistics__subtitle">Комплектующих</h3>
-									<p class="kirovets_statistics__desc">В составе каждого трактора «Кировец» используется около 3000 деталей.</p>
-								</li>
-
-								<li class="kirovets_statistics__item swiper-slide">
-									<span class="kirovets_statistics__number">100</span>
-									<h3 class="kirovets_statistics__subtitle">Дилеров по всему миру</h3>
-									<p class="kirovets_statistics__desc">По всему миру около 100 компаний занимаются поставкой и обслуживанием тракторов, выпускаемых АО «Петербургский тракторный завод».</p>
-								</li>
-							</ul>
-							<div class="swiper-scrollbar kirovets_swiper-scrollbar"></div>
-						</div>
-					
-				</div>
-			</section>
 
 		
 
+		<section class="kirovets_about">
 
+			<div class="parallax__img--kirovets_about parallax__img--kirovets_about-3" data-type="parallax" data-depth = "0.4"></div>
+				
+
+				
+				
+				<div class="parallax__img--kirovets_about parallax__img--kirovets_about-2" data-type="parallax" data-depth = "0"></div> 
+				
+				<div class="parallax__img--kirovets_about parallax__img--kirovets_about-1" data-type="parallax" data-depth = "0.1"></div>
+			
+			<div class="container">
+				<h2 class="kirovets_about__title">
+					<span class="red-accent">«Кировец»</span>
+					 – легендарный трактор, выпускается на Кировском заводе с 1962 года
+				</h2>
+
+				<p class="kirovets_about__desc">Предназначен для выполнения сельскохозяйственных, транспортных, дорожно-строительных и других работ.</p>
+			</div>
+
+			<ul class="kirovets_social__btn-list">
+				<li class="kirovets_social__btn-item kirovets_social__btn-item--share" style="background-image: url(./img/social-share.svg);">
+					<a class="kirovets_social__btn-link" href=""></a>
+				</li>
+				<li class="kirovets_social__btn-item kirovets_social__btn-item--message" style="background-image: url(./img/social-message.svg);">
+					<a class="kirovets_social__btn-link" href=""></a>
+				</li>
+
+			</ul>
+		</section>
+
+
+		<div class="traktors__container">
+
+		
+			<section class="traktors" id="year-1924">
+				
+				<div class="container">
+
+					<h2 class="traktors__title">История легенды</h2>
+
+					<div class="traktors__number">
+
+						<svg class="traktors__number-icon traktors__number-icon--one" ><use xlink:href="./img/sprite.svg#icon-year-1"></use></svg>
+						<svg class="traktors__number-icon" ><use xlink:href="./img/sprite.svg#icon-year-9"></use></svg>
+						<svg class="traktors__number-icon" ><use xlink:href="./img/sprite.svg#icon-year-2"></use></svg>
+						<svg class="traktors__number-icon traktors__number-icon--four" ><use xlink:href="./img/sprite.svg#icon-year-4"></use></svg>
+					</div>
+
+					<div class="traktors__about">
+						<h3 class="traktors__about-title traktors__about-title--mobile">Предшественник</h3>
+
+						<div class="traktors__image">
+							<img src="./img/traktor-1.png" alt="">
+						</div>
+						<div class="traktors__info">
+
+							<div class="traktors__info-wrap">
+								<h3 class="traktors__about-title traktors__about-title--desktop">Предшественник</h3>
+
+								<div class="traktors__info-type-wrap">
+
+									<div class="traktors__info-type">
+										<h4 class="traktors__name">«Фордзон-Путиловец»</h4>
+										<span class="traktors__age">20-35 л.с.</span>
+									</div>
+									
+									<!-- <div class="traktors__info-type">
+										<h4 class="traktors__name">«Фордзон-Путиловец»</h4>
+										<span class="traktors__age">20-35 л.с.</span>
+									</div>  -->
+								 
+
+									<div class="traktors__prints">
+										<img class="traktors__prints-img" src="./img/traktor-1-vector.svg" alt="">
+									</div>
+								</div>
+							</div>
+							
+
+							<div class="traktors__text-wrap traktors__text-wrap--desktop">
+								<h5 class="traktors__subtitle">Первый серийный отечественный трактор</h5>
+								<p class="traktors__desc">С выпуска трактора «Фордзон-Путиловец» началась история российского тракторостроения. Инженеры Путиловского завода значительно переработали американский Fordson-F под нужды советского сельского хозяйства. «Фордзон-Путиловец» стал одним из значимых символов перемен в период коллективизации, он часто появлялся на плакатах, почтовых марках и в фильмах</p>
+		
+		
+								<a href="#" class="button-more--traktors button-more">
+									<span>подробнее</span>
+								</a>
+							</div>
+
+							
+						
+						</div>
+					
+						
+					
+					</div>
+
+					<div class="traktors__text-wrap traktors__text-wrap--tablet">
+						<h5 class="traktors__subtitle">Первый серийный отечественный трактор</h5>
+						<p class="traktors__desc">С выпуска трактора «Фордзон-Путиловец» началась история российского тракторостроения. Инженеры Путиловского завода значительно переработали американский Fordson-F под нужды советского сельского хозяйства. «Фордзон-Путиловец» стал одним из значимых символов перемен в период коллективизации, он часто появлялся на плакатах, почтовых марках и в фильмах</p>
+
+
+						<a href="#" class="button-more--traktors button-more">
+							<span>подробнее</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="traktors" id="year-1934">
+				
+				<div class="container">
+
+					<h2 class="traktors__title traktors__title--two-screen">История<br>легенды</h2>
+
+					<div class="traktors__number">
+
+						<svg class="traktors__number-icon traktors__number-icon--one" height="100%"><use xlink:href="./img/sprite.svg#icon-year-1"></use></svg>
+						<svg class="traktors__number-icon" height="100%"><use xlink:href="./img/sprite.svg#icon-year-9"></use></svg>
+						<svg class="traktors__number-icon" height="100%"><use xlink:href="./img/sprite.svg#icon-year-2"></use></svg>
+						<svg class="traktors__number-icon traktors__number-icon--four" height="100%"><use xlink:href="./img/sprite.svg#icon-year-4"></use></svg>
+					</div>
+
+					<div class="traktors__about">
+						<h3 class="traktors__about-title traktors__about-title--mobile">Предшественник</h3>
+
+						<div class="traktors__image">
+							<img src="./img/traktor-2.png" alt="">
+						</div>
+						<div class="traktors__info">
+
+							<div class="traktors__info-wrap">
+								<h3 class="traktors__about-title traktors__about-title--desktop">Предшественник</h3>
+
+								<div class="traktors__info-type-wrap">
+
+									<div class="traktors__info-type">
+										<h4 class="traktors__name">Универсал-1</h4>
+										<span class="traktors__age">22 л.с.</span>
+									</div>
+									
+									<div class="traktors__info-type">
+										<h4 class="traktors__name">Универсал-2</h4>
+										<span class="traktors__age">22 л.с.</span>
+									</div> 
+								 
+
+									<div class="traktors__prints">
+										<img class="traktors__prints-img" src="./img/traktor-2-vector.svg" alt="">
+									</div>
+								</div>
+							</div>
+							
+
+							<div class="traktors__text-wrap traktors__text-wrap--desktop">
+								<h5 class="traktors__subtitle">Трактор для пропашных работ «Универсал»</h5>
+								<p class="traktors__desc">Трактор отечественной разработки «Универсал» – первый в стране пропашной трактор, он положил начало новой линейке универсальных и лёгких пропашных тракторов широкого профиля. Один «Универсал» заменял собой ручной труд тысячи сезонных рабочих. На несколько десятилетий эта модель стала самой востребованной в стране. </p>
+		
+		
+								<a href="#" class="button-more--traktors button-more">
+									<span>подробнее</span>
+								</a>
+							</div>
+
+							
+						
+						</div>
+					
+						
+					
+					</div>
+
+					<div class="traktors__text-wrap traktors__text-wrap--tablet">
+						<h5 class="traktors__subtitle">Трактор для пропашных работ «Универсал»</h5>
+						<p class="traktors__desc">Трактор отечественной разработки «Универсал» – первый в стране пропашной трактор, он положил начало новой линейке универсальных и лёгких пропашных тракторов широкого профиля. Один «Универсал» заменял собой ручной труд тысячи сезонных рабочих. На несколько десятилетий эта модель стала самой востребованной в стране.</p>
+
+
+						<a href="#" class="button-more--traktors button-more">
+							<span>подробнее</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="traktors" id="year-1962">
+				
+				<div class="container">
+
+					<h2 class="traktors__title traktors__title--two-screen">История<br>легенды</h2>
+
+					<div class="traktors__number">
+
+						<svg class="traktors__number-icon" height="100%"><use xlink:href="./img/sprite.svg#icon-year-1"></use></svg>
+						<svg class="traktors__number-icon" height="100%"><use xlink:href="./img/sprite.svg#icon-year-9"></use></svg>
+						<svg class="traktors__number-icon" height="100%"><use xlink:href="./img/sprite.svg#icon-year-2"></use></svg>
+						<svg class="traktors__number-icon" height="100%"><use xlink:href="./img/sprite.svg#icon-year-4"></use></svg>
+					</div>
+
+					<div class="traktors__about">
+						<h3 class="traktors__about-title traktors__about-title--mobile">Предшественник</h3>
+
+						<div class="traktors__image">
+							<img src="./img/traktor-2.png" alt="">
+						</div>
+						<div class="traktors__info">
+
+							<div class="traktors__info-wrap">
+								<h3 class="traktors__about-title traktors__about-title--desktop">Предшественник</h3>
+
+								<div class="traktors__info-type-wrap">
+
+									<div class="traktors__info-type">
+										<h4 class="traktors__name">Универсал-1</h4>
+										<span class="traktors__age">22 л.с.</span>
+									</div>
+									
+									<div class="traktors__info-type">
+										<h4 class="traktors__name">Универсал-2</h4>
+										<span class="traktors__age">22 л.с.</span>
+									</div> 
+								 
+
+									<div class="traktors__prints">
+										<img class="traktors__prints-img" src="./img/traktor-2-vector.svg" alt="">
+									</div>
+								</div>
+							</div>
+							
+
+							<div class="traktors__text-wrap traktors__text-wrap--desktop">
+								<h5 class="traktors__subtitle">Трактор для пропашных работ «Универсал»</h5>
+								<p class="traktors__desc">Трактор отечественной разработки «Универсал» – первый в стране пропашной трактор, он положил начало новой линейке универсальных и лёгких пропашных тракторов широкого профиля. Один «Универсал» заменял собой ручной труд тысячи сезонных рабочих. На несколько десятилетий эта модель стала самой востребованной в стране. </p>
+		
+		
+								<a href="#" class="button-more--traktors button-more">
+									<span>подробнее</span>
+								</a>
+							</div>
+
+							
+						
+						</div>
+					
+						
+					
+					</div>
+
+					<div class="traktors__text-wrap traktors__text-wrap--tablet">
+						<h5 class="traktors__subtitle">Трактор для пропашных работ «Универсал»</h5>
+						<p class="traktors__desc">Трактор отечественной разработки «Универсал» – первый в стране пропашной трактор, он положил начало новой линейке универсальных и лёгких пропашных тракторов широкого профиля. Один «Универсал» заменял собой ручной труд тысячи сезонных рабочих. На несколько десятилетий эта модель стала самой востребованной в стране.</p>
+
+
+						<a href="#" class="button-more--traktors button-more">
+							<span>подробнее</span>
+						</a>
+					</div>
+				</div>
+			</section>
+			
+		</div>
+		
+
+
+		<section class="kirovets_tabs">
+
+
+			<div class="container">
+				<h2 class="kirovets_tabs__title">Современный «Кировец»</h2>
+			</div>
+
+
+				<div class="kirovets_tabs__nav">
+					<div class="container">
+
+						<div class="swiper-container kirovets_tabs__list-wrap">
+							<ul class="kirovets_tabs__list swiper-wrapper">
+								<li class="kirovets_tabs__nav-item swiper-slide">
+									<button class="kirovets_tabs__nav-btn">модель к-7м</button>
+								</li>
+								<li class="kirovets_tabs__nav-item swiper-slide">
+									<button class="kirovets_tabs__nav-btn">модель к-5</button>
+								</li>
+							</ul>
+						</div>
+						
+					
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="swiper-container kirovets_tabs__container">
+						
+							<ul class="kirovets_tabs__slider swiper-wrapper">
+								<li class="kirovets_tabs__slide swiper-slide" style="background-image: url(../img/model-k7m.png);">
+
+
+									<!-- <div class="kirovets_tabs__img">
+										<img src="" alt="">
+									</div> -->
+									<div class="swiper-container kirovets_tabs__features">
+										<ul class="kirovets_tabs__features-list swiper-wrapper">
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">кабина</h3>
+													<p class="kirovets_tabs__features-desc">Комфортабельная шумоизолированная кабина с кондиционером и подрессоренным креслом</p>
+												</div>
+											</li>
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">Гидросистема</h3>
+													<p class="kirovets_tabs__features-desc">управления поворотом трактора оснащена отдельным насосом производительностью 80 л/мин</p>
+												</div>
+											</li>
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">Шины</h3>
+													<p class="kirovets_tabs__features-desc">увеличенной размерности, что дает возможность работать с более тяжелыми прицепными агрегатами и одновременно снижает нагрузку на грунт</p>
+												</div>
+											</li>
+
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">программное обеспечение</h3>
+													<p class="kirovets_tabs__features-desc">новое программное обеспечение системы управления «КомандПост»-3, защищающее от ошибочных действий человека.</p>
+												</div>
+											</li>
+
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">трансмиссия</h3>
+													<p class="kirovets_tabs__features-desc">в трансмиссии появилась автоматическая коробка передач Т7 и усиленные ведущие мосты</p>
+												</div>
+											</li>
+
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">бак</h3>
+													<p class="kirovets_tabs__features-desc">Вместительный 800-литровый топливный бак</p>
+												</div>
+												
+											</li>
+										</ul>
+										<div class="swiper-scrollbar kirovets_swiper-scrollbar kirovets_swiper-scrollbar--tabs"></div>
+									</div>
+
+
+								</li>
+
+
+								<li class="kirovets_tabs__slide swiper-slide" style="background-image: url(../img/model-k5.png);">
+
+
+									<!-- <div class="kirovets_tabs__img">
+										<img src="" alt="">
+									</div> -->
+									<div class="swiper-container kirovets_tabs__features">
+										<ul class="kirovets_tabs__features-list swiper-wrapper">
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">кабина</h3>
+													<p class="kirovets_tabs__features-desc">Комфортабельная шумоизолированная кабина с кондиционером и подрессоренным креслом</p>
+												</div>
+											</li>
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">Гидросистема</h3>
+													<p class="kirovets_tabs__features-desc">управления поворотом трактора оснащена отдельным насосом производительностью 80 л/мин</p>
+												</div>
+											</li>
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">Шины</h3>
+													<p class="kirovets_tabs__features-desc">увеличенной размерности, что дает возможность работать с более тяжелыми прицепными агрегатами и одновременно снижает нагрузку на грунт</p>
+												</div>
+											</li>
+
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">программное обеспечение</h3>
+													<p class="kirovets_tabs__features-desc">новое программное обеспечение системы управления «КомандПост»-3, защищающее от ошибочных действий человека.</p>
+												</div>
+											</li>
+
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">трансмиссия</h3>
+													<p class="kirovets_tabs__features-desc">в трансмиссии появилась автоматическая коробка передач Т7 и усиленные ведущие мосты</p>
+												</div>
+											</li>
+
+											<li class="kirovets_tabs__features-item swiper-slide">
+												<div class="kirovets_tabs__features-wrap">
+													<h3 class="kirovets_tabs__features-subtitle">бак</h3>
+													<p class="kirovets_tabs__features-desc">Вместительный 800-литровый топливный бак</p>
+												</div>
+												
+											</li>
+										</ul>
+										<div class="swiper-scrollbar kirovets_swiper-scrollbar kirovets_swiper-scrollbar--tabs"></div>
+									</div>
+
+
+								</li>
+							</ul>
+						
+					</div>
+				</div>
+		
+		</section>
+
+		<section class="kirovets_zavod">
+
+			
+
+			<div class="container">
+				<h2 class="kirovets_zavod__title kirovets_zavod__title--desktop">Производитель тракторов «Кировец» – АО «Петербургский тракторный завод»</h2>
+				<div class="kirovets_zavod-wrapper">
+					
+					<div class="kirovets_zavod-img-wrap">
+						<img class="kirovets_zavod-img" src="./img/logo-big.svg" alt="">
+					</div>
+					
+					<div class="kirovets_zavod-text">
+						<h2 class="kirovets_zavod__title kirovets_zavod__title--all">Производитель тракторов «Кировец» – АО «Петербургский тракторный завод»</h2>
+						<p>АО «Петербургский тракторный завод» входит в группу компаний «Кировский завод». Это единственный российский производитель мощных колесных сельскохозяйственных тракторов, крупнейший поставщик дорожно-строительной и специальной техники. Компания поставляет свою продукцию нефтегазодобывающим компаниям, угледобывающим, металлургическим холдингам и сельскохозяйственным предприятиям, производящим до 70% основных продовольственных товаров России.</p>
+						<p>На собственной площадке предприятия, занимающей около 195 000 кв. м., ежегодно выпускается 2500 тракторов. Компания производит технику, соответствующую высоким мировым стандартам. Продукция АО «Петербургский тракторный завод» экспортируется в 14 стран мира. Тракторы предприятия широко востребованы на рынке Казахстана, поставляются в ряд западноевропейских стран (Франция, Германия, Чехия, Болгария и т.д), а также в Австралию, Канаду и США.</p>
+						<p>Отличительные черты техники, производимой на АО «Петербургский тракторный завод», – это высокий уровень качества и надежность техники, европейский дизайн и комфорт для оператора.</p>
+						<button class="button button--details kirovets_button">Подробнее</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="kirovets_advant parallax__item">
+
+			
+				<div class="parallax__img-wrap">
+					<div class="parallax__img parallax__img--kirovets_advant" style="background-image: url(../img/bg-advant.jpg)"></div>
+				</div>
+			
+
+			<div class="container">
+				<h2 class="kirovets_advant__title">Серийное производство трактора «Кировец»</h2>
+				<ul class="kirovets_advant__list">
+					<li class="kirovets_advant__item">Современное оборудование</li>
+					<li class="kirovets_advant__item">Квалифицированный персонал</li>
+					<li class="kirovets_advant__item">контроль качества на всех этапах производства</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="kirovets_statistics">
+
+			
+			<div class="container">
+				<h2 class="kirovets_statistics__title">
+					<div class="title--inner">Успех и востребованность</div> <div class="title--inner">трактора «Кировец»</div></h2>
+
+					<div class="swiper-container kirovets_statistics__slider">
+						<ul class="kirovets_statistics__list swiper-wrapper">
+							<li class="kirovets_statistics__item swiper-slide">
+
+								<div class="kirovets_statistics__number-wrap">
+									<span class="kirovets_statistics__number statictics--inner">600 000</span>
+								</div>
+							
+								<h3 class="kirovets_statistics__subtitle">тракторов «Кировец» выпущено</h3>
+								<p class="kirovets_statistics__desc">Тракторы выпускаются с 1962 года, они востребованы в России, на территории бывшего СССР и в других странах мира.</p>
+							</li>
+
+							<li class="kirovets_statistics__item swiper-slide">
+								<div class="kirovets_statistics__number-wrap">
+									<span class="kirovets_statistics__number statictics--inner">14</span>
+								</div>
+								<h3 class="kirovets_statistics__subtitle">Стран для ЭКСПОРТA</h3>
+								<p class="kirovets_statistics__desc">Начиная с 1968 года было экспортировано 12 000 тракторов «Кировец» в 14 стран ближнего и дальнего зарубежья.</p>
+							</li>
+
+							<li class="kirovets_statistics__item swiper-slide">
+								<div class="kirovets_statistics__number-wrap">
+									<span class="kirovets_statistics__number statictics--inner">3 000</span>
+								</div>
+								<h3 class="kirovets_statistics__subtitle">Комплектующих</h3>
+								<p class="kirovets_statistics__desc">В составе каждого трактора «Кировец» используется около 3000 деталей.</p>
+							</li>
+
+							<li class="kirovets_statistics__item swiper-slide">
+								<div class="kirovets_statistics__number-wrap">
+									<span class="kirovets_statistics__number statictics--inner">100</span>
+								</div>
+								<h3 class="kirovets_statistics__subtitle">Дилеров по всему миру</h3>
+								<p class="kirovets_statistics__desc">По всему миру около 100 компаний занимаются поставкой и обслуживанием тракторов, выпускаемых АО «Петербургский тракторный завод».</p>
+							</li>
+						</ul>
+						<div class="swiper-scrollbar kirovets_swiper-scrollbar"></div>
+					</div>
+				
+			</div>
+		</section>
+
+	</div>
+</main>
+
+		
+
+			<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
 	<script src="./js/script.min.js"></script>
 </body>

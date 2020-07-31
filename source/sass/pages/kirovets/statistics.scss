@@ -1,9 +1,12 @@
 .kirovets_statistics{
 	padding-top: 45px;
 	padding-bottom: 30px;
+
+
 }
 .kirovets_statistics__title{
 	@extend %block-title;
+	perspective: 600px;
 }
 .kirovets_statistics__list{
 	@include list-destroy;
@@ -14,6 +17,7 @@
 }
 .kirovets_statistics__number{
 	@extend %red-number;
+	display: inline-block;
 }
 .kirovets_statistics__subtitle{
 	@extend %small-subtitle;
@@ -33,6 +37,10 @@
 	@extend %scroll-drag;
 }
 
+.kirovets_statistics__number-wrap{
+	overflow: hidden;
+	margin-bottom: 15px;
+}
 @media(min-width: 767px){
 	.kirovets_statistics{
 		padding-top: 40px;
@@ -51,7 +59,10 @@
 		width:47%;
 		padding-bottom: 10px;
 	}
-
+	.kirovets_statistics__number-wrap{
+		overflow: hidden;
+		margin-bottom: 15px;
+	}
 }
 
 @media(min-width: 1280px){

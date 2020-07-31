@@ -1,14 +1,21 @@
 .kirovets_advant{
 	min-height: 640px;
 	background-color: #18213D;
-	background-image: url(../img/bg-adv.jpg);
+	// background-image: url(../img/bg-adv.jpg);
+	// background-image: url(../img/bg-adv.jpg);
+
+
+}
+.parallax__img--kirovets_advant{
 	background-size: cover;
 	background-position: center right;
+	background-image: url(../img/bg-adv.jpg);
 }
 .kirovets_advant__title{
 	@extend %block-title-light;
 	padding-top: 40px;
 	width: 90%;
+	position: relative;
 }
 .kirovets_advant__list{
 	@include list-destroy;
@@ -62,6 +69,10 @@
 @media(min-width: 1280px){
 	.kirovets_advant{
 		min-height: 640px;
+		background-position: center center;
+	}
+	.parallax__img--kirovets_advant{
+		background-size: cover;
 		background-position: center center;
 	}
 	.kirovets_advant__title{

@@ -1,0 +1,731 @@
+.traktors:nth-of-type(odd){
+	background-color: $bg-color-light-grey;
+}
+.traktors{
+	padding-bottom: 50px;
+}
+.traktors__title{
+	margin: 0;
+	padding: 0;
+	font-family: $font-bold-title;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 12px;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: $black-grey;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
+.traktors__number{
+	padding-top: 25px;
+	height: 105px;
+	width: 100%;
+
+}
+.traktors__about-title{
+
+	margin: 0;
+	padding: 0;
+	font-family: $font-regular;
+	margin-top: 30px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+
+	color: $red-color;
+}
+.traktors__image{
+	width: 100%;
+}
+.traktors__name{
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+.traktors__name, .traktors__age{
+	font-family: $font-regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 17px;
+	/* identical to box height */
+	display: inline-block;
+
+	color: $grey-text-paragraf;
+}
+.traktors__age{
+	opacity: 0.47;
+
+}
+.traktors__subtitle{
+	margin: 0;
+	padding: 0;
+	margin-top: 25px;
+	font-family: $font-regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 20px;
+
+	color: $black-grey;
+}
+
+.traktors__desc{
+	@extend %block-text;
+	margin-top: 15px;
+}
+
+.button-more--traktors{
+	@extend  %button-more;
+	margin-top: 10px;
+}
+// .button-more--traktors::before{
+// 	@extend %button-more-before;
+// }
+.traktors__nav{
+	display: none;
+}
+.traktors__about-title--desktop{
+	display: none;
+}
+.traktors__prints{
+	display: none;
+}
+.traktors__text-wrap--desktop{
+	display: none;
+}
+
+.traktors__number{
+	display: flex;
+
+}
+.traktors__number-icon{
+	fill: none;
+	stroke: #808080;
+	
+	stroke-width: 1.2px;
+	width: 80px;
+
+	stroke-dasharray: 4000;
+		stroke-dashoffset: 4000;
+		flex-shrink: 0;
+}
+.traktors__number-icon--one{
+	width: 50px;
+
+
+	margin-right: 5px;
+}
+.traktors__number-icon--four{
+	width: 95px;
+
+}
+.traktors__title--two-screen{
+	display: none;
+}
+.traktors__number-icon.is-inview{
+	animation: dash 8s linear forwards 0.5s;
+}
+
+@media (min-width:360px){
+	.traktors__number{
+	
+		width: 320px;
+
+	}
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (min-width:767px){
+	
+	.traktors{
+		padding-bottom: 50px;
+	
+	}
+	.traktors__container{
+		position: relative;
+	}
+	.traktors__nav{
+		display: inline-block;
+		position: fixed;
+		right: 2%;
+		height: 90%;
+		top:0px;
+		z-index: 2000;
+		transition: opacity 0.1s linear;
+		opacity: 0;
+		// display: none;
+		display: flex;
+		flex: column;
+		box-sizing: border-box;
+
+	}
+	.traktors__nav-list{
+		padding-top: 20px;
+		@include list-destroy;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.traktors__nav-link{
+		text-decoration: none;
+		font-family: $font-text-regular;
+		font-family: MullerRegular;
+		font-size: 12px;
+		line-height: 14px;
+		text-align: center;
+		color: #ADADAD;
+		display: block;
+		position: relative;
+		transition: all 0.3s ease;
+
+	}
+	.traktors__nav-item:not(:last-child) .traktors__nav-link{
+		padding-bottom: 20px;
+		margin-bottom: 5px;
+	}
+	.traktors__nav-link.active{
+		color: #000000;
+	}
+	.traktors__nav-item:not(:last-child) .traktors__nav-link::after{
+		content: '';
+		position: absolute;
+		width: 1px;
+		height: 15px;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #C6BEBE;
+		transition: all 0.3s ease;
+	}
+	.traktors__nav-item:not(:last-child) .traktors__nav-link.active::after{
+		background: #000000;
+	}
+	.traktors__title{
+		font-size: 24px;
+		line-height: 40px;
+
+		color: $red-color;
+		padding-top: 30px;
+		padding-left: 0px;
+	}
+	.traktors__title--two-screen{
+		display: block;
+		font-size: 16px;
+		line-height: 112.5%
+	}
+	.traktors__number{
+		padding-top: 30px;
+		width: 385px;
+		height: 120px;
+	
+	}
+
+	.traktors__number-icon{
+		fill: none;
+		stroke: #808080;
+
+		width: 95px;
+	
+		stroke-dasharray: 4000;
+			stroke-dashoffset: 4000;
+			flex-shrink: 0;
+			margin-right: 2px;
+	}
+	.traktors__number-icon--one{
+		width: 60px;
+	
+	
+		margin-right: 10px;
+	}
+	.traktors__number-icon--four{
+		width: 120px;
+	
+	}
+
+	.traktors__about-title--mobile{
+		display: none;
+	}
+	.traktors__about-title--desktop{
+		display: block;
+	}
+	.traktors__prints{
+		display: block;
+	}
+	.traktors__about{
+		display: flex;
+		justify-content: flex-start;
+		margin-top: 10px;
+	}
+	.traktors__info{
+		order: 1;
+		width: 40%;
+	}
+
+	.traktors__info-type-wrap{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	.traktors__info-type{
+		width: 50%;
+	}
+
+	.traktors__image{
+		width: 50%;
+		// width: 100%;
+	}
+	.traktors__image{
+		order: 2;
+		max-width: 365px;
+	}
+	.traktors__prints{
+		margin-top: 10px;
+		width: 100%;
+		position: relative;
+		// border-bottom: 1px solid #A0A1A2;
+
+		&::before{
+			content: "";
+			position: absolute;
+			bottom: 5px;
+			height: 1px;
+			width: 100%;
+			background-color:#A0A1A2;
+		}
+	}
+	.traktors__age{
+		display: block;
+
+	}
+	.traktors__prints-img{
+		max-width: 140px;
+	}
+	.traktors__about-title{
+
+		margin-top: 10px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+		text-transform: uppercase;
+	
+		color: $grey-text-paragraf;
+	}
+
+	.traktors__about-title:first-letter{
+		font-size: 42px;
+		line-height: 50px;
+		text-transform: uppercase;
+		color: $red-color;
+	}
+	
+	
+	.traktors__name{
+	
+		margin-top: 25px;
+	}
+	.traktors__name, .traktors__age{
+
+		font-size: 14px;
+		line-height: 17px;
+	
+	}
+
+	.traktors__subtitle{
+
+		margin-top: 15px;
+
+		font-size: 24px;
+		line-height: 24px;
+		width: 60%;
+	}
+	
+	.traktors__desc{
+	
+		margin-top: 10px;
+		width: 85%;
+	}
+	
+	.button-more--traktors{
+		margin-top: 10px;
+	}
+	
+}
+
+@media (min-width: 1280px){
+	.traktors__text-wrap--desktop{
+		display: block;
+		width: 100%;
+	}
+	.traktors__text-wrap--tablet{
+		display: none;
+	}
+	.traktors{
+		padding-bottom: 55px;
+	
+	}
+	.traktors__container{
+		position: relative;
+	}
+	.traktors__nav{
+		// display: inline-block;
+		
+		right: 2%;
+	
+		// top: 80px;
+	}
+	.traktors__nav-list{
+		padding-top: 80px;
+	}
+
+	.traktors__nav-link{
+
+		font-size: 12px;
+		line-height: 14px;
+
+
+	}
+	.traktors__nav-item:not(:last-child) .traktors__nav-link{
+		padding-bottom: 20px;
+		margin-bottom: 5px;
+	}
+
+	.traktors__nav-item:not(:last-child) .traktors__nav-link::after{
+
+		height: 15px;
+
+	}
+
+	.traktors__title{
+		font-size: 36px;
+		line-height: 40px;
+
+		color: $red-color;
+		padding-top: 30px;
+
+	}
+
+	.traktors__title--two-screen{
+		font-size: 18px;
+		line-height: 112.5%;
+	}
+	.traktors__number{
+		padding-top: 30px;
+		width: 430px;
+		height: 120px;
+
+	}
+	.traktors__number-icon{
+		fill: none;
+		stroke: #808080;
+
+		width: 105px;
+	
+		stroke-dasharray: 4000;
+			stroke-dashoffset: 4000;
+			flex-shrink: 0;
+			margin-right: 2px;
+	}
+	.traktors__number-icon--one{
+		width: 60px;
+	
+	
+		margin-right: 10px;
+	}
+	.traktors__number-icon--four{
+		width: 105px;
+	
+	}
+
+	.traktors__about{
+		display: flex;
+		justify-content: flex-start;
+		margin-top: 15px;
+	}
+	.traktors__info{
+		order: 1;
+		width: 50%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.traktors__info-wrap{
+		display: flex;
+		
+		align-items: flex-end;
+		justify-content: space-between;
+		// border-bottom: 1px solid #A0A1A2;
+		width: 100%;
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			bottom: 5px;
+			height: 1px;
+			width: 100%;
+			background-color:#A0A1A2;
+		}
+	}
+	.traktors__info-type{
+		width: 50%;
+		// flex-shrink: 1;
+		// flex-grow: 1;
+		max-width: 100%;
+
+
+	}
+
+	.traktors__info-type-wrap{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	.traktors__image{
+		order: 2;
+		width: 50%;
+		max-width: 545px;
+		// max-width: none;
+	}
+	.traktors__prints{
+		margin-top: 30px;
+		width: 100%;
+		border-bottom: none;
+		margin-left: 85px;
+		&::before{
+		
+			display: none;
+		
+		}
+	}
+	.traktors__age{
+		display: block;
+
+	}
+	.traktors__prints-img{
+		max-width: 140px;
+	}
+	.traktors__about-title{
+
+		margin-top: 0px;
+	
+		font-size: 15px;
+		line-height: 18px;
+
+	}
+
+	.traktors__about-title:first-letter{
+		font-size: 50px;
+		line-height: 60px;
+	
+	}
+
+	.traktors__name{
+	
+		margin-top: 0px;
+	}
+	.traktors__name, .traktors__age{
+
+		font-size: 16px;
+		line-height: 19px;
+	
+	}
+
+	.traktors__subtitle{
+
+		margin-top: 25px;
+
+		font-size: 30px;
+		line-height: 36px;
+		width: 100%;
+	}
+	
+	.traktors__desc{
+	
+		margin-top: 25px;
+		width: 100%;
+	}
+	.button-more--traktors{
+		margin-top: 25px;
+	}
+
+
+
+}
+
+
+@media (min-width: 1919px){
+	.traktors__text-wrap--desktop{
+		display: block;
+		width: 100%;
+	}
+	.traktors__text-wrap--tablet{
+		display: none;
+	}
+	.traktors{
+		padding-bottom: 45px;
+		padding-left: 70px;
+	
+	}
+	.traktors__container{
+		position: relative;
+	}
+	.traktors__nav{
+		// display: inline-block;
+		
+		right: 3%;
+	
+		top: 135px;
+	}
+
+
+
+	.traktors__title{
+		font-size: 46px;
+		line-height: 46px;
+		padding-top: 45px;
+
+	}
+	
+	.traktors__number{
+		padding-top: 30px;
+		width: 650px;
+		height: 240px;
+
+	}
+	.traktors__number-icon{
+		fill: none;
+		stroke: #808080;
+		width: 180px;
+	
+		stroke-dasharray: 4000;
+			stroke-dashoffset: 4000;
+			flex-shrink: 0;
+			margin-right: 2px;
+	}
+	.traktors__number-icon--one{
+		width: 110px;
+	
+	
+		margin-right: 15px;
+	}
+	.traktors__number-icon--four{
+		width: 200px;
+	
+	}
+
+
+	.traktors__about{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 25px;
+		align-items: center;
+	}
+	.traktors__info{
+		order: 1;
+		width: 45%;
+		display: flex;
+		flex-wrap: wrap;
+		
+	}
+	.traktors__info-wrap{
+		display: flex;
+		
+		align-items: flex-end;
+		justify-content: flex-start;
+		// border-bottom: 1px solid #A0A1A2;
+		width: 100%;
+		max-width: 660px;
+		
+	}
+	.traktors__info-type{
+		width: 50%;
+		// flex-shrink: 1;
+		// flex-grow: 1;
+		max-width: 100%;
+
+
+	}
+
+	.traktors__info-type-wrap{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: flex-start;
+		margin-left: 115px;
+	
+	}
+	.traktors__image{
+		margin-top: -20%;
+		order: 2;
+		width: 50%;
+		max-width: 787px;
+		max-width: none;
+	}
+	.traktors__prints{
+		margin-top: 30px;
+		width: auto;
+		border-bottom: none;
+		margin-left: 0px;
+	}
+	.traktors__age{
+		display: block;
+
+	}
+	.traktors__prints-img{
+		max-width: 275px;
+		min-width: 275px;
+	}
+	.traktors__about-title{
+
+		margin-top: 0px;
+	
+		font-size: 15px;
+		line-height: 18px;
+
+	}
+
+	.traktors__about-title:first-letter{
+		font-size: 50px;
+		line-height: 60px;
+	
+	}
+
+	.traktors__name{
+	
+		margin-top: 0px;
+	}
+	.traktors__name, .traktors__age{
+
+		font-size: 16px;
+		line-height: 19px;
+	
+	}
+
+	.traktors__subtitle{
+
+		margin-top: 30px;
+
+		font-size: 36px;
+		line-height: 39px;
+		width: 90%;
+	}
+	
+	.traktors__desc{
+	
+		margin-top: 15px;
+		width: 100%;
+	}
+	
+	
+}

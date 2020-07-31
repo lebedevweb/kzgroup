@@ -7,11 +7,13 @@
 	@extend %block-title;
 	padding-top: 45px;
 	width: 90%;
+	position: relative;
 }
 .kirovets_about__desc{
 	@extend %upper-text;
 	padding-top: 35px;
 	width: 90%;
+	position: relative;
 }
 .kirovets_social__btn-list{
 
@@ -46,6 +48,27 @@
 	height: 100%;
 }
 
+
+
+.parallax__img--kirovets_about{
+
+	background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+ 
+  position: fixed;
+	// z-index: -1;
+	height: 370px;
+	// background-size: 100% auto;
+}
+
+.kirovets_about{
+	position: relative;
+	overflow: hidden;
+
+
+}
 
 @media(min-width: 767px){
 	.kirovets_about{
@@ -83,11 +106,71 @@
 	.kirovets_social__btn-item:last-child{
 		border-bottom: 1px solid #E6E6E6;
 	}
+	.parallax__img--kirovets_about{
+
+		background-position: bottom center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 100%;
+		position: fixed;
+		z-index: -1;
+		height: 505px;
+		// background-size: 100% auto;
+	}
 }
 
 @media(min-width: 1280px){
 	.kirovets_about{
 		min-height: 660px;
+		position: relative;
+	}
+	.parallax__img--kirovets_about{
+
+		background-position: bottom  center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+		
+		--overflow: -200px;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+		height: 660px;
+		
+	}
+	.parallax__img--kirovets_about-1{
+		background-image: url(../img/img-parallax-1.svg);
+		background-position: bottom  center;
+		
+	}
+	.parallax__img--kirovets_about-2{
+		background-image: url(../img/img-parallax-2.svg);
+		
+	
+	}
+	.parallax__img--kirovets_about-3{
+		background-image: url(../img/img-parallax-3.svg);
+	
+	}
+
+	.parallax__img--kirovets_about-3{
+		--overflow: -420px;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+		height: 660px;
+	}
+	.parallax__img--kirovets_about-2{
+		--overflow: 0px;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+		height: 660px;
+	}
+	.parallax__img--kirovets_about-1{
+		--overflow: -150px;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+		height: 660px;
 	}
 	.kirovets_about__title{
 		padding-top: 125px;
@@ -122,6 +205,12 @@
 	.kirovets_about{
 		min-height: 960px;
 	}
+	.parallax__img--kirovets_about{
+	
+		height: 960px;
+		// background-size: 100% auto;
+	}
+
 	.kirovets_about__title{
 		padding-top: 215px;
 		padding-left: 70px;

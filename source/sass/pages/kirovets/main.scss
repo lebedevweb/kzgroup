@@ -1,13 +1,28 @@
 .kirovets_main{
 	background-color: #18213D;
+	// background-image: url(../img/bg-main-mobile.jpg);
+	// background-position: center;
+	// background-size: cover;
+	// background-repeat: no-repeat;
+	// background-attachment: fixed;
+	height: 435px;
+
+	position: relative;
+
+
+}
+
+.parallax__img--kirovets_main{
 	background-image: url(../img/bg-main-mobile.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-
-	height: 435px;
-
-	position: relative;
+}
+.parallax__img-video{
+	display: none;
+}
+.parallax__img-video.active{
+	display: block;
 }
 .kirovets_main .container{
 	height: 100%;
@@ -22,30 +37,45 @@
 
 .kirovets_main__title{
 	@extend %title-main-screen;
+	position: relative;
 }
 
-.kirovets_button__video-controls{
-	@include btn-destroy;
 
+.button__video-controls-wrap{
 	position: absolute;
-	width: 30px;
-	height: 30px;
-	background-image: url(../img/btn-pause.svg);
-	background-size: 30px 30px;
 	right: 4%;
 	bottom: 25px;
 
+}
+.kirovets_button__video-controls{
+	@include btn-destroy;
 
+
+	width: 30px;
+	height: 30px;
+	background-image: url(../img/btn-play.svg);
+	background-size: 30px 30px;
 }
 
 
+.kirovets_button__video-controls.active{
+	background-image: url(../img/btn-pause.svg);
+}
+.kirovets_button__video-controls--sound{
+	background-image: url(../img/sound-off.svg);
+}
+.kirovets_button__video-controls--sound.active{
+	background-image: url(../img/sound-on.svg);
+}
 
 @media(min-width: 767px){
 	.kirovets_main{
-		background-image: url(../img/bg-main-tablet.jpg);
+		// background-image: url(../img/bg-main-tablet.jpg);
 		min-height: 520px;
 	}
-
+	.parallax__img--kirovets_main{
+		background-image: url(../img/bg-main-tablet.jpg);
+	}
 	.kirovets_main__wrapper{
 		height: 100%;
 		display: flex;
@@ -54,20 +84,21 @@
 		align-items: flex-start;
 	}
 
-	.kirovets_button__video-controls{
-		
+	.button__video-controls-wrap{
 		right: 5%;
 		bottom: 25px;
-
-
+		
 	}
 	
 }
 
 @media(min-width: 1280px){
 	.kirovets_main{
-		background-image: url(../img/bg-main-laptop.jpg);
+		// background-image: url(../img/bg-main-laptop.jpg);
 		min-height: 720px;
+	}
+	.parallax__img--kirovets_main{
+		background-image: url(../img/bg-main-laptop.jpg);
 	}
 	.kirovets_button__video-controls{
 	
@@ -83,17 +114,24 @@
 @media(min-width: 1919px){
 	
 	.kirovets_main{
-		background-image: url(../img/bg-main-desktop.jpg);
+		// background-image: url(../img/bg-main-desktop.jpg);
 		min-height: 900px;
 
 	
 	}
+	.parallax__img--kirovets_main{
+		background-image: url(../img/bg-main-desktop.jpg);
+	}
 	.kirovets_button__video-controls{
-		right: 5%;
-		bottom: 45px;
+
 		width: 65px;
 		height: 65px;
 		background-size: 65px 65px;
+	}
+	.button__video-controls-wrap{
+		right: 5%;
+		bottom: 45px;
+		
 	}
 	.kirovets_main__title{
 		padding-left: 60px;
