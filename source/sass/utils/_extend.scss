@@ -268,6 +268,26 @@
 	cursor: pointer;
 	padding: 13px 0px;
 	width: 100%;
+	position: relative;
+	transition: all 0.3s;
+	z-index: 5;
+	&::after{
+		content: '';
+    position: absolute;
+    z-index: -1;
+		width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+		background: #000000;
+		transition: all 0.3s;
+	}
+	&:hover{
+		color: #FFFFFF;
+	}
+	&:hover::after{
+		width: 100%;
+	}
 }
 
 
@@ -294,7 +314,7 @@
 	font-style: normal;
 	font-weight: 900;
 	font-size: 52px;
-	line-height: 71px;
+	line-height: 52px;
 	letter-spacing: -0.025em;
 
 	color: $red-color;
@@ -304,14 +324,14 @@
 @media(min-width: 1280px){
 	%red-number{
 		font-size: 64px;
-		line-height: 87px;
+		line-height: 64px;
 
 	}
 }
 @media(min-width: 1919px){
 	%red-number{
 		font-size: 85px;
-		line-height: 116px;
+		line-height: 85px;
 
 	}
 }
@@ -379,4 +399,71 @@
 %scroll-drag{
 	background: $red-color;
 	border-radius: 0px;
+}
+
+
+// Ссылка подробнее
+
+
+
+%button-more{
+	font-family: $font-regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 18px;
+	color: $black-grey;
+	text-decoration: none;
+	display: block;
+	padding-left: 35px;
+	position: relative;
+	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	&::before{
+		content: "";
+		position: absolute;
+		width: 30px;
+		height: 1px;
+		border-top: 1px solid $black-grey;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		transform-origin: center left;
+		transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+		transition-delay: 0.1s;
+	}
+	& span{
+		display: inline-block;
+		transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	
+	// &:hover::before{
+	// 	width: 45px;
+	
+	// }
+
+}
+
+
+@media (min-width: 1280px){
+	%button-more{
+	
+		font-size: 14px;
+		line-height: 18px;
+	
+	
+		padding-left: 65px;
+		 &:hover span{
+				transform:  translateX(10px);
+			}
+		&::before{
+			width: 40px;
+			height: 1px;
+		}
+		&:hover::before{
+			width: 55px;
+		}
+	
+	}
+
 }

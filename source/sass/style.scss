@@ -16,6 +16,22 @@
 
 @import 'pages/kirovets/tabs';
 
+@import 'pages/kirovets/traktors';
+
+// html{
+// 	scroll-behavior: smooth;
+// }
+
+// * {
+//   scroll-behavior: smooth;
+// }
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 body{
 	margin: 0;
 	padding: 0;
@@ -23,7 +39,14 @@ body{
 	background-color: #ffffff;
 }
 
-
+img{
+	max-width: 100%;
+	height: auto;
+}
+svg{
+	max-width: 100%;
+	height: auto;
+}
 // Контейтер
 
 .container{
@@ -70,3 +93,41 @@ body{
 .red-accent{
 	color: $red-color;
 }
+
+[data-scroll] {
+	will-change: transform;
+}
+.parallax__item{
+	position: relative;
+	overflow: hidden;
+}
+
+.parallax__img-wrap{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	will-change: transform;
+	
+}
+
+
+	.parallax__img {
+		--overflow: 20%;
+		height: calc(100% + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+		width: 100%;
+		position: absolute;
+	
+		// background-image: var(--image);
+		// background-size: cover;
+		// background-position: 50% 0%;
+		will-change: transform;
+	}
+
+	@media(min-width: 1280px){
+		.parallax__img{
+			--overflow: 30%;
+		}
+		
+	}
+	
