@@ -574,6 +574,7 @@ gsap.utils.toArray('.statictics--inner').forEach(element => {
 
 
 
+
 // accordion
 let acc = document.getElementsByClassName("akcioner-info__accordion-item--title-arrow");
 let menu = document.getElementsByClassName("akcioner-info__menu-icon");
@@ -592,3 +593,6 @@ for (i = 0; i < menu.length; i++) {
 		item.parentNode.classList.toggle("active");
 	});
 }
+
+
+

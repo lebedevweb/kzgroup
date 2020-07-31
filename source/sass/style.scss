@@ -15,24 +15,13 @@
 @import 'pages/kirovets/statistics';
 
 @import 'pages/kirovets/tabs';
-
+@import 'pages/kirovets/traktors';
 // company_group
 @import 'pages/company_group/_company-group';
-@import 'pages/kirovets/traktors';
 
-// html{
-// 	scroll-behavior: smooth;
-// }
+@import 'pages/actioners/actioners';
 
-// * {
-//   scroll-behavior: smooth;
-// }
 
-@media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
-}
 
 body{
 	margin: 0;
