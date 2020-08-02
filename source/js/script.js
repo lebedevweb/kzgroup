@@ -106,21 +106,19 @@ breakpoint.addListener(breakpointChecker);
 breakpointChecker();
 
 // accordion
-let acc = document.getElementsByClassName("akcioner-info__accordion-item--title-arrow");
+let acc = document.getElementsByClassName("akcioner-info__accordion-item");
 let menu = document.getElementsByClassName("akcioner-info__menu-icon");
 let i;
 
 for (i = 0; i < acc.length; i++) {
 	acc[i].addEventListener("click", function() {
-		let item = this.parentElement;
-		item.parentNode.classList.toggle("active");
+		this.classList.toggle("active");
 	});
 }
 
 for (i = 0; i < menu.length; i++) {
 	menu[i].addEventListener("click", function() {
-		let item = this.parentElement;
-		item.parentNode.classList.toggle("active");
+		this.classList.toggle("active");
 	});
 }
 
