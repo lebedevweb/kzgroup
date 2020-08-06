@@ -108,6 +108,10 @@ breakpointChecker();
 // accordion
 let acc = document.getElementsByClassName("akcioner-info__accordion-item");
 let menu = document.getElementsByClassName("akcioner-info__menu-icon");
+let contactNavItem = document.getElementsByClassName("contacts-sidebar__nav-item");
+let navItem = document.getElementsByClassName("contacts-navigation-list__item");
+
+
 let i;
 
 for (i = 0; i < acc.length; i++) {
@@ -121,6 +125,24 @@ for (i = 0; i < menu.length; i++) {
 		this.classList.toggle("active");
 	});
 }
+
+for (i = 0; i < contactNavItem.length; i++) {
+	contactNavItem[i].addEventListener("click", function() {
+		let current = document.getElementsByClassName("active");
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	});
+}
+
+for (i = 0; i < navItem.length; i++) {
+	navItem[i].addEventListener("click", function() {
+		let current = document.getElementsByClassName("contacts-navigation-list__item-active");
+		current[0].className = current[0].className.replace(" contacts-navigation-list__item-active", "");
+		this.className += " contacts-navigation-list__item-active";
+	});
+}
+
+
 
 
 
