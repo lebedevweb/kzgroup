@@ -10,10 +10,10 @@
     </head>
     <body>
     <main class="akcioner-container">
-        <nav class="akcioner-navigation">
-            <ul class="akcioner-navigation-list">
+        <nav id="barba-wrapper" class="akcioner-navigation">
+            <ul class="akcioner-navigation-list barba-container">
                 <li class="akcioner-navigation-list__item-active"><a href="#">Акционерам</a></li>
-                <li class="akcioner-navigation-list__item"><a href="#">Инвесторам</a></li>
+                <li class="akcioner-navigation-list__item"><a href="http://localhost:3000/investors.html">Инвесторам</a></li>
             </ul>
         </nav>
 
@@ -24,11 +24,15 @@
                 <h3 class="akcioner-info__accordion-item--title akcioner-info__menu-item--title">
                     Выбрать
                     <div class="akcioner-info__menu-icon">
-                        <span class="akcioner-info__menu-icon-burger"></span>
+                        <svg width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="6.46289" width="22.6152" height="1.07691" fill="#171C28"/>
+                            <rect width="22.6152" height="1.07691" fill="#171C28"/>
+                            <path d="M0 12.9238H22.6152V14.0007H0V12.9238Z" fill="#171C28"/>
+                        </svg>
                     </div>
                 </h3>
                 <ul>
-                    <li class="akcioner-info__accordion-item--text akcioner-info__menu-item--text">
+                    <li class="akcioner-info__accordion-item--text akcioner-info__menu-item--text active">
                         <a href="#menu-item1" class="akcioner-info__accordion-item--text-container akcioner-info__menu-item--text-container">
                             Информация, подлежащая раскрытию
                         </a>
