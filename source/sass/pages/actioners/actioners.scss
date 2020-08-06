@@ -686,9 +686,6 @@
 }
 
 .active {
-  .akcioner-info__menu-item--text {
-    color: red;
-  }
   .akcioner-info__menu{
     border: none;
   }
@@ -713,7 +710,7 @@
     outline: 0;
 
     &>ul {
-      border: 1px solid #DDDDDD;
+
       &>li {
         background-color: #F8F8F8;
         color: #616161;
@@ -731,6 +728,10 @@
     }
 
     &.active {
+
+      &>ul {
+        border: 1px solid #DDDDDD;
+      }
       border-bottom: none;
       border-right: none;
       border-left: none;
@@ -767,6 +768,10 @@
   color: #616161;
 }
 
+.akcioner-info__menu-item--text-container.active {
+  color: #C30215 !important;
+}
+
 .akcioner-investors-sidebar__contacts {
   h2 {
     margin-top: 30px;
@@ -792,6 +797,8 @@
     max-height: 0;
   }
 }
+
+
 
 
 
