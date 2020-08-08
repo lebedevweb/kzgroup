@@ -1,4 +1,4 @@
-.rent__pagination {
+.rent_pagination {
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@
     width: 180px;
   }
 
-  .rent__pagination-button {
+  .rent_pagination-button {
     border: none;
     text-align: center;
     text-decoration: none;
@@ -63,17 +63,17 @@
     //   margin-bottom: 15px;
     // }
   }
-  .rent__pagination-button--black {
+  .rent_pagination-button--black {
     color: white;
     background-color: $black-grey;
   }
 
-  .rent__pagination-button--grey {
+  .rent_pagination-button--grey {
     background-color: white;
     color: $grey-text-table;
   }
 
-  .rent__pagination-arrow {
+  .rent_pagination-arrow {
     cursor: pointer;
 
     @media (min-width: 1440px) {
