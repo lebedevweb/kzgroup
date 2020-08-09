@@ -110,7 +110,9 @@ let acc = document.getElementsByClassName("akcioner-info__accordion-item");
 let menu = document.getElementsByClassName("akcioner-info__menu-icon");
 let contactNavItem = document.getElementsByClassName("contacts-sidebar__nav-item");
 let navItem = document.getElementsByClassName("contacts-navigation-list__item");
-
+let actionerNavItem = document.getElementsByClassName('akcioner-navigation-list__item-active');
+let contactsMenuItem = document.getElementsByClassName('contacts-navigation-list__item-active');
+let contactsMenu = document.getElementsByClassName("contacts-menu-container");
 
 let i;
 
@@ -122,6 +124,18 @@ for (i = 0; i < acc.length; i++) {
 
 for (i = 0; i < menu.length; i++) {
 	menu[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+	});
+}
+
+for (i = 0; i < contactsMenuItem.length; i++) {
+	contactsMenuItem[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+	});
+}
+
+for (i = 0; i < actionerNavItem.length; i++) {
+	actionerNavItem[i].addEventListener("click", function() {
 		this.classList.toggle("active");
 	});
 }
@@ -141,6 +155,8 @@ for (i = 0; i < navItem.length; i++) {
 		this.className += " contacts-navigation-list__item-active";
 	});
 }
+
+
 
 
 

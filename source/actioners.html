@@ -12,41 +12,52 @@
     <main class="akcioner-container">
         <nav id="barba-wrapper" class="akcioner-navigation">
             <ul class="akcioner-navigation-list barba-container">
-                <li class="akcioner-navigation-list__item-active"><a href="#">Акционерам</a></li>
+                <li onclick="toggleDropDown()" class="akcioner-navigation-list__item akcioner-navigation-list__item-active"><a href="#">Акционерам</a>
+                    <svg class="akcioner-navigation-list__item-active-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 8L13 1" stroke="#C30215"/>
+                    </svg>
+                </li>
+
                 <li class="akcioner-navigation-list__item"><a href="http://localhost:3000/investors.html">Инвесторам</a></li>
             </ul>
         </nav>
+        <div id="akcioner-menu-container" class="akcioner-menu-container">
+            <ul class="akcioner-menu__nav-list">
+                <li class="akcioner-menu__nav-item"><a href="#extend">Информация, подлежащая раскрытию</a></li>
+                <li class="akcioner-menu__nav-item"><a href="#extend">Раскрытие информации дочерними обществами</a></li>
+            </ul>
+        </div>
 
 
 
-        <section class="akcioner-info__accordion akcioner-info__menu">
-            <div class="akcioner-info__accordion-item akcioner-info__menu-item">
-                <h3 class="akcioner-info__accordion-item--title akcioner-info__menu-item--title">
-                    Выбрать
-                    <div class="akcioner-info__menu-icon">
-                        <svg width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="6.46289" width="22.6152" height="1.07691" fill="#171C28"/>
-                            <rect width="22.6152" height="1.07691" fill="#171C28"/>
-                            <path d="M0 12.9238H22.6152V14.0007H0V12.9238Z" fill="#171C28"/>
-                        </svg>
-                    </div>
-                </h3>
-                <ul>
-                    <li class="akcioner-info__accordion-item--text akcioner-info__menu-item--text">
-                        <a href="#menu-item1" class="akcioner-info__accordion-item--text-container akcioner-info__menu-item--text-container active">
-                            Информация, подлежащая раскрытию
-                        </a>
-                    </li>
+<!--        <section class="akcioner-info__accordion akcioner-info__menu">-->
+<!--            <div class="akcioner-info__accordion-item akcioner-info__menu-item">-->
+<!--                <h3 class="akcioner-info__accordion-item&#45;&#45;title akcioner-info__menu-item&#45;&#45;title">-->
+<!--                    Выбрать-->
+<!--                    <div class="akcioner-info__menu-icon">-->
+<!--                        <svg width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                            <rect y="6.46289" width="22.6152" height="1.07691" fill="#171C28"/>-->
+<!--                            <rect width="22.6152" height="1.07691" fill="#171C28"/>-->
+<!--                            <path d="M0 12.9238H22.6152V14.0007H0V12.9238Z" fill="#171C28"/>-->
+<!--                        </svg>-->
+<!--                    </div>-->
+<!--                </h3>-->
+<!--                <ul>-->
+<!--                    <li class="akcioner-info__accordion-item&#45;&#45;text akcioner-info__menu-item&#45;&#45;text">-->
+<!--                        <a href="#menu-item1" class="akcioner-info__accordion-item&#45;&#45;text-container akcioner-info__menu-item&#45;&#45;text-container active">-->
+<!--                            Информация, подлежащая раскрытию-->
+<!--                        </a>-->
+<!--                    </li>-->
 
-                    <li class="akcioner-info__accordion-item--text akcioner-info__menu-item--text">
-                        <a href="#menu-item2" class="akcioner-info__accordion-item--text-container akcioner-info__menu-item--text-container">
-                            Раскрытие информации дочерними обществами
-                        </a>
-                    </li>
+<!--                    <li class="akcioner-info__accordion-item&#45;&#45;text akcioner-info__menu-item&#45;&#45;text">-->
+<!--                        <a href="#menu-item2" class="akcioner-info__accordion-item&#45;&#45;text-container akcioner-info__menu-item&#45;&#45;text-container">-->
+<!--                            Раскрытие информации дочерними обществами-->
+<!--                        </a>-->
+<!--                    </li>-->
 
-                </ul>
-            </div>
-        </section>
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </section>-->
 
 
 
@@ -61,10 +72,10 @@
                         <h3 class="akcioner-info__accordion-item--title">
                             <span>Общие собрания акционеров</span>
                             <span class="akcioner-info__accordion-item--title-arrow">
-                            <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.03706 1.05163L2.03709 1.05161L2.03415 1.04812C1.97196 0.97417 1.89831 0.904842 1.8047 0.855377C1.70848 0.804535 1.60552 0.782207 1.49578 0.782207C1.08599 0.782207 0.75 1.15502 0.75 1.62165C0.75 1.78842 0.814213 2.02343 0.955405 2.19279L10.4233 13.9797L10.4232 13.9798L10.4269 13.9841C10.5666 14.1502 10.7574 14.25 10.9652 14.25C11.1731 14.25 11.3639 14.1502 11.5036 13.9841L11.5036 13.9841L11.5068 13.9802L21.0242 2.19329L21.0722 2.13624C21.3711 1.7809 21.2745 1.28864 21.0226 0.989175C20.8717 0.809683 20.6659 0.729374 20.4548 0.754483C20.2538 0.778379 20.0759 0.893577 19.9459 1.04812L19.9459 1.04808L19.9426 1.05215L11.0143 12.1287L2.03706 1.05163Z" stroke-width="0.5"/>
-                            </svg>
-                        </span>
+                                <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.03706 1.05163L2.03709 1.05161L2.03415 1.04812C1.97196 0.97417 1.89831 0.904842 1.8047 0.855377C1.70848 0.804535 1.60552 0.782207 1.49578 0.782207C1.08599 0.782207 0.75 1.15502 0.75 1.62165C0.75 1.78842 0.814213 2.02343 0.955405 2.19279L10.4233 13.9797L10.4232 13.9798L10.4269 13.9841C10.5666 14.1502 10.7574 14.25 10.9652 14.25C11.1731 14.25 11.3639 14.1502 11.5036 13.9841L11.5036 13.9841L11.5068 13.9802L21.0242 2.19329L21.0722 2.13624C21.3711 1.7809 21.2745 1.28864 21.0226 0.989175C20.8717 0.809683 20.6659 0.729374 20.4548 0.754483C20.2538 0.778379 20.0759 0.893577 19.9459 1.04812L19.9459 1.04808L19.9426 1.05215L11.0143 12.1287L2.03706 1.05163Z" stroke-width="0.5"/>
+                                </svg>
+                            </span>
                         </h3>
                         <ul>
                             <li class="akcioner-info__accordion-item--text">
@@ -328,5 +339,15 @@
         </section>
     </section>
         <script src="./js/script.min.js"></script>
+    <script>
+        function toggleDropDown() {
+            let x = document.getElementById("akcioner-menu-container");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
     </body>
 </html>
