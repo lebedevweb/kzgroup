@@ -3,7 +3,28 @@
   padding: 0;
 }
 
+
+
 .akcioner {
+  &__investors {
+    &-link {
+      border-bottom: 1px solid #000000;
+      font-size: 18px;
+      line-height: 28px;
+      color: #171C28;
+      margin-bottom: 10px;
+
+        @media only screen and(max-width: 1280px) {
+          font-size: 16px;
+          line-height: 28px;
+        }
+
+      @media only screen and(max-width: 768px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
     &-navigation {
       width: 100%;
       display: flex;
@@ -57,6 +78,7 @@
     }
 
   &-footer {
+    margin-top: 43px;
     &__contacts {
       display: none;
       @media only screen and(max-width: 768px) {
@@ -76,16 +98,10 @@
       @media only screen and(max-width: 768px) {
         padding-right: 10%;
         padding-left: 10%;
-        margin-bottom: 215px;
       }
 
       @media only screen and(max-width: 767px) {
         margin-bottom: 35px;
-      }
-
-      @media only screen and(max-width: 620px) {
-        padding-right: 4%;
-        padding-left: 4%;
       }
     }
 
@@ -118,7 +134,7 @@
         color: #616161;
         margin: 0;
         padding-top: 5%;
-        padding-left: 7%;
+        padding-left: 10%;
       }
 
       &>h3 {
@@ -129,7 +145,7 @@
         line-height: 20px;
         color: #616161;
         margin: 0;
-        padding: 0 0 0 7%;
+        padding: 0 0 0 10%;
       }
 
       &>p {
@@ -138,8 +154,8 @@
         line-height: 20px;
         color: #171C28;
         padding-bottom: 5px;
-        width: 90%;
-        padding-left: 7%;
+        padding-left: 10%;
+        width: 60%;
       }
     }
   }
@@ -200,6 +216,11 @@
         color: #616161;
         padding: 45px 0 0;
         margin: 0;
+
+        @media only screen and(max-width: 1220px) {
+          font-size: 20px;
+          line-height: 136.6%;
+        }
       }
 
       &>h3 {
@@ -211,6 +232,11 @@
         color: #616161;
         padding: 0;
         margin: 0;
+
+        @media only screen and(max-width: 1220px) {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
 
       &>p {
@@ -219,6 +245,12 @@
         line-height: 28px;
         color: #171C28;
         padding-bottom: 20px;
+
+
+        @media only screen and(max-width: 1220px) {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
     }
 
@@ -254,6 +286,14 @@
         }
       }
     }
+
+    &__investors-container {
+      margin-top: 60px;
+
+      @media only screen and(max-width: 768px) {
+        margin-top: 10px;
+      }
+    }
     &-container {
       width: 75%;
       padding-right: 2%;
@@ -263,11 +303,12 @@
       }
 
       @media only screen and(max-width: 768px) {
-        width: 90%;
+        width: 100%;
+        padding: 0;
       }
       &>h2 {
         width: 100%;
-        font-family: $font-regular;
+        font-family: $font-bold-2-title;
         font-style: normal;
         font-weight: bold;
         font-size: 34px;
@@ -293,7 +334,6 @@
     }
 
     &__menu {
-      //border: 1px solid black;
       &-item {
         display: none;
         border: 1px solid black;
@@ -315,13 +355,17 @@
         outline: none;
 
         padding: 30px 0;
+        border-bottom: 1.3px solid darken($grey-light-border, 10);
 
         @media only screen and(max-width: 768px) {
           padding: 10px 0;
         }
 
-        &:not(:last-child) {
-          border-bottom: 1.3px solid darken($grey-light-border, 10);
+        &:last-child {
+          margin-bottom: 62px;
+          @media only screen and(max-width: 768px) {
+            margin-bottom: 22px;
+          }
         }
 
         &.active {
@@ -550,19 +594,20 @@
   }
 }
 
-.akcioner-info__menu-item {
-  margin-top: 15px;
-  overflow: hidden;
-  outline: 0;
-  border: 1px solid #000000;
-  padding: 15px;
-  margin-right: 4%;
-  margin-left: 4%;
+.akcioner-info__menu {
 
-  &.active {
-    border-bottom: none;
-    border-right: none;
-    border-left: none;
+  &-item {
+    margin-top: 15px;
+    overflow: hidden;
+    outline: 0;
+    border: 1px solid #000000;
+    padding: 15px;
+
+    &.active {
+      border-bottom: none;
+      border-right: none;
+      border-left: none;
+    }
   }
 }
 
@@ -587,4 +632,10 @@
   font-size: 16px;
   font-family: $font-regular;
   color: #616161;
+}
+
+.akcioner-investors-sidebar__contacts {
+  h2 {
+    margin-top: 30px;
+  }
 }

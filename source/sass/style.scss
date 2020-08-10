@@ -51,12 +51,15 @@ body{
 	z-index: 11000 !important;
 }
 
+a {
+	text-decoration: none;
+}
+
 .has-nav-open .scroll .scrollbar-track{
 	display: none !important;
 }
 .visually-hidden{
-	position: absolute;
-
+ position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
