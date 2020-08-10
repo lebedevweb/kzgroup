@@ -1,12 +1,16 @@
 .kirovets_about{
 	min-height: 370px;
 	position: relative;
+	background-image: url(../img/bg-about.svg);
+	background-size: contain;
+	background-position: bottom center;
+	background-repeat: no-repeat;
 }
 
 .kirovets_about__title{
 	@extend %block-title;
 	padding-top: 45px;
-	width: 90%;
+	width: 100%;
 	position: relative;
 }
 .kirovets_about__desc{
@@ -15,39 +19,6 @@
 	width: 90%;
 	position: relative;
 }
-.kirovets_social__btn-list{
-
-	@include list-destroy;
-	position: absolute;
-	right: 0;
-	top: 65px;
-}
-.kirovets_social__btn-item{
-	width: 30px;
-	height: 30px;
-	border: 0.822852px solid #E6E6E6;
-	border-bottom: none;
-	background-position: center;
-	background-repeat: no-repeat;
-
-}
-.kirovets_social__btn-item--share{
-	background-size: 13px 15px;
-}
-.kirovets_social__btn-item--message{
-	background-size: 14px 11px;
-}
-
-.kirovets_social__btn-item:last-child{
-	border-bottom: 0.822852px solid #E6E6E6;
-}
-
-.kirovets_social__btn-link{
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
 
 
 .parallax__img--kirovets_about{
@@ -57,7 +28,7 @@
   background-repeat: no-repeat;
   width: 100%;
  
-  position: fixed;
+  position: absolute;
 	// z-index: -1;
 	height: 370px;
 	// background-size: 100% auto;
@@ -84,45 +55,26 @@
 		width: 85%;
 	}
 
-	.kirovets_social__btn-list{
-		right: 1%;
-		top: 70px;
-	}
-
-	.kirovets_social__btn-item{
-		width: 40px;
-		height: 35px;
-		border: 1px solid #E6E6E6;
-		border-bottom: none;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-	.kirovets_social__btn-item--share{
-		background-size: 16px 18px;
-	}
-	.kirovets_social__btn-item--message{
-		background-size: 17px 14px;
-	}
-	.kirovets_social__btn-item:last-child{
-		border-bottom: 1px solid #E6E6E6;
-	}
+	
 	.parallax__img--kirovets_about{
 
 		background-position: bottom center;
-		background-size: contain;
+		background-size: auto 505px;
 		background-repeat: no-repeat;
 		width: 100%;
-		position: fixed;
+		position: absolute;
 		z-index: -1;
 		height: 505px;
-		// background-size: 100% auto;
+
 	}
+
 }
 
 @media(min-width: 1280px){
 	.kirovets_about{
 		min-height: 660px;
 		position: relative;
+		background-image: none;
 	}
 	.parallax__img--kirovets_about{
 
@@ -133,45 +85,47 @@
 		position: absolute;
 		z-index: -1;
 		
-		--overflow: -200px;
-		height: calc(660px + (2 * var(--overflow)));
-		top: calc( -1 * var(--overflow));
-		height: 660px;
+		// --overflow: -200px;
+		// height: calc(660px + (2 * var(--overflow)));
+		// top: calc( -1 * var(--overflow));
+		// height: 660px;
 		
 	}
 	.parallax__img--kirovets_about-1{
 		background-image: url(../img/img-parallax-1.svg);
 		background-position: bottom  center;
+		--overflow: -150px;
+		// --overflow: -20%;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
 		
 	}
 	.parallax__img--kirovets_about-2{
 		background-image: url(../img/img-parallax-2.svg);
-		
-	
-	}
-	.parallax__img--kirovets_about-3{
-		background-image: url(../img/img-parallax-3.svg);
-	
-	}
-
-	.parallax__img--kirovets_about-3{
-		--overflow: -420px;
-		height: calc(660px + (2 * var(--overflow)));
-		top: calc( -1 * var(--overflow));
-		height: 660px;
-	}
-	.parallax__img--kirovets_about-2{
-		--overflow: 0px;
-		height: calc(660px + (2 * var(--overflow)));
-		top: calc( -1 * var(--overflow));
-		height: 660px;
-	}
-	.parallax__img--kirovets_about-1{
+		// --overflow: -15%;
 		--overflow: -150px;
 		height: calc(660px + (2 * var(--overflow)));
 		top: calc( -1 * var(--overflow));
-		height: 660px;
+		
 	}
+	.parallax__img--kirovets_about-3{
+		background-image: url(../img/img-parallax-3.svg);
+		// --overflow: -150px;
+		--overflow: -200px;
+		// --overflow: -50%;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+	
+	}
+	.parallax__img--kirovets_about-4{
+		background-image: url(../img/img-parallax-4.svg);
+		// --overflow: -25%;
+		--overflow: -150px;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+	}
+
+
 	.kirovets_about__title{
 		padding-top: 125px;
 		width: 75%;
@@ -181,27 +135,11 @@
 		padding-top: 30px;
 		width: 92%;
 	}
-	.kirovets_social__btn-list{
-		right: 2%;
-		top: 110px;
-	}
-	.kirovets_social__btn-item{
-		width: 50px;
-		height: 46px;
 	
-	
-	}
-
-	.kirovets_social__btn-item--share{
-		background-size: 20px 23px;
-	}
-	.kirovets_social__btn-item--message{
-		background-size: 21px 16px;
-	}
 
 }
 
-@media(min-width: 1919px){
+@media(min-width: 1680px){
 	.kirovets_about{
 		min-height: 960px;
 	}
@@ -211,26 +149,84 @@
 		// background-size: 100% auto;
 	}
 
+
 	.kirovets_about__title{
 		padding-top: 215px;
-		padding-left: 70px;
+		// padding-left: 70px;
 		width: 82%;
 	}
 	.kirovets_about__desc{
 		
 		padding-top: 35px;
-		padding-left: 70px;
+		// padding-left: 70px;
 		width: 70%;
 	}
-	.kirovets_social__btn-list{
-		right: 3.5%;
-		top: 180px;
+
+
+
+	.parallax__img--kirovets_about-1{
+		background-image: url(../img/img-parallax-1.svg);
+		background-position: bottom  center;
+		// --overflow: -250px;
+		// --overflow: -20%;
+		// height: calc(960px + (2 * var(--overflow)));
+		// top: calc( -1 * var(--overflow));
+		
 	}
-	.kirovets_social__btn-item--share{
-		background-size: 20px 23px;
+	.parallax__img--kirovets_about-2{
+		background-image: url(../img/img-parallax-2.svg);
+		// --overflow: -12%;
+		// height: calc(960px + (2 * var(--overflow)));
+		// top: calc( -1 * var(--overflow));
+		
 	}
-	.kirovets_social__btn-item--message{
-		background-size: 21px 17px;
+	.parallax__img--kirovets_about-3{
+		background-image: url(../img/img-parallax-3.svg);
+		// --overflow: -150px;
+		// --overflow: -40%;
+		// height: calc(960px + (2 * var(--overflow)));
+		// top: calc( -1 * var(--overflow));
+	
+	}
+	.parallax__img--kirovets_about-4{
+		background-image: url(../img/img-parallax-4.svg);
+		// --overflow: -20%;
+		// height: calc(960px + (2 * var(--overflow)));
+		// top: calc( -1 * var(--overflow));
+	}
+
+	.parallax__img--kirovets_about-1{
+		background-image: url(../img/img-parallax-1.svg);
+		background-position: bottom  center;
+		--overflow: -150px;
+		// --overflow: -20%;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+		
+	}
+	.parallax__img--kirovets_about-2{
+		background-image: url(../img/img-parallax-2.svg);
+		// --overflow: -15%;
+		--overflow: -150px;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+		
+	}
+	.parallax__img--kirovets_about-3{
+		background-image: url(../img/img-parallax-3.svg);
+		// --overflow: -150px;
+		--overflow: -300px;
+		// --overflow: -50%;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
+	
+	}
+	.parallax__img--kirovets_about-4{
+		background-image: url(../img/img-parallax-4.svg);
+		// --overflow: -25%;
+		--overflow: -200px;
+		height: calc(660px + (2 * var(--overflow)));
+		top: calc( -1 * var(--overflow));
 	}
 
 

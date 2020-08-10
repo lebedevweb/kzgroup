@@ -5,8 +5,15 @@
 
 
 @import 'libs/swiperbundle';
-// @import 'header';
 
+@import 'common/social-btn';
+
+@import 'common/footer';
+
+@import 'common/header';
+
+// @import 'common/nav';
+@import 'common/nav2';
 @import 'pages/kirovets/main';
 @import 'pages/kirovets/about';
 @import 'pages/kirovets/advant';
@@ -17,26 +24,43 @@
 @import 'pages/kirovets/tabs';
 
 @import 'pages/kirovets/traktors';
+@import 'pages/kirovets/popup';
 
-// html{
-// 	scroll-behavior: smooth;
-// }
 
-// * {
-//   scroll-behavior: smooth;
-// }
 
-@media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
-}
 
 body{
 	margin: 0;
 	padding: 0;
 	min-width: 320px;
 	background-color: #ffffff;
+	
+}
+.scroll{
+	width: 100vw;
+
+	height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+	-webkit-overflow-scrolling: touch;
+}
+.scrollbar-track{
+	z-index: 11000 !important;
+}
+
+.has-nav-open .scroll .scrollbar-track{
+	display: none !important;
+}
+.visually-hidden{
+	position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 img{
@@ -47,8 +71,18 @@ svg{
 	max-width: 100%;
 	height: auto;
 }
-// Контейтер
 
+figure{
+	margin: 0;
+	padding: 0;
+}
+// Контейтер
+.scrollbar-track-y{
+	display: none !important;
+}
+.scrollbar-track-x{
+	display: none !important;
+}
 .container{
 
 	padding-left: 4%;
@@ -66,6 +100,9 @@ svg{
 		max-width: 1280px;
 		margin: 0 auto;
 	}
+	.scrollbar-track-y{
+		display: block !important;
+	}
 	
 }
 @media(min-width: 1280px){
@@ -79,11 +116,11 @@ svg{
 	
 }
 
-@media(min-width: 1919px){
+@media(min-width: 1680px){
 	.container{
 		
-		padding-left: 6%;
-		padding-right: 6%;
+		padding-left: 9%;
+		padding-right: 9%;
 		max-width: 1920px;
 		margin: 0 auto;
 	}
@@ -107,27 +144,14 @@ svg{
 	height: 100%;
 	width: 100%;
 	will-change: transform;
+	perspective: 1000px;
 	
 }
 
+.parallax__img{
+	// position: absolute;
 
-	.parallax__img {
-		--overflow: 20%;
-		height: calc(100% + (2 * var(--overflow)));
-		top: calc( -1 * var(--overflow));
-		width: 100%;
-		position: absolute;
-	
-		// background-image: var(--image);
-		// background-size: cover;
-		// background-position: 50% 0%;
-		will-change: transform;
-	}
+	width: 100%;
+	height: 100%;
+}
 
-	@media(min-width: 1280px){
-		.parallax__img{
-			--overflow: 30%;
-		}
-		
-	}
-	
