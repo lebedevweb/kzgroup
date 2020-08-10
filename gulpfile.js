@@ -80,7 +80,7 @@ gulp.task("minifyjs", function () {
         .pipe(source('app.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init())
-        .pipe(minifyjs())
+        // .pipe(minifyjs())
         .pipe(sourcemaps.write('./maps'))
     .pipe(rename("script.min.js"))
     .pipe(gulp.dest("./build/js"));
