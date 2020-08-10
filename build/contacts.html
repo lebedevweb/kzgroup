@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+<body>
+<main class="contacts-container">
+    <nav id="barba-wrapper" class="contacts-navigation">
+        <ul class="akcioner-navigation-list barba-container">
+            <li onclick="toggleDropDown()" id="contacts" class="contacts-navigation-list__item contacts-navigation-list__item-active"><a href="#">Контакты</a>
+                <svg class="contacts-navigation-list__item-active-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7 8L13 1" stroke="#C30215"></path>
+                </svg>
+            </li>
+
+
+<!--            <li class="contacts-navigation-list__item contacts-navigation-list__item-active">-->
+<!--                <a href="#contacts">-->
+<!--                    Контакты-->
+<!--                </a>-->
+<!--                <svg class="contacts-navigation-list__item-active-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                    <path d="M1 1L7 8L13 1" stroke="#C30215"/>-->
+<!--                </svg>-->
+<!--            </li>-->
+            <li class="contacts-navigation-list__item"><a href="#feedback">Обратная связь</a></li>
+            <li class="contacts-navigation-list__item"><a href="#line">Горячая линия</a></li>
+            <li class="contacts-navigation-list__item"><a href="#contact-info">Реквизиты</a></li>
+        </ul>
+    </nav>
+    <div id="menu-container" class="contacts-menu-container">
+        <ul class="contacts-menu__nav-list">
+            <li class="contacts-menu__nav-item"><a href="#extend">Руководство</a></li>
+            <li class="contacts-menu__nav-item"><a href="#extend">Пресс-центр</a></li>
+            <li class="contacts-menu__nav-item"><a href="#extend">Дочерние компании</a></li>
+            <li class="contacts-menu__nav-item"><a href="#extend">Трудоустройство</a></li>
+            <li class="contacts-menu__nav-item"><a href="#extend">Аренда</a></li>
+            <li class="contacts-menu__nav-item"><a href="#extend">Музей</a></li>
+        </ul>
+    </div>
+
+    <div class="contacts__content-container">
+        <div class="contacts-info-container contacts-info__contacts-container">
+            <div class="contacts-info__text-wrapper">
+                <div class="contacts__contacts-phone">
+                    <h3>Телефон/Факс:</h3>
+                    <p>+7 (812) 702-01-24</p>
+                </div>
+                <div class="contacts__contacts-mail">
+                    <h3>E-mail:</h3>
+                    <p>info@kzgroup.ru</p>
+                </div>
+                <div class="contacts__contacts-address">
+                    <h3>Адрес:</h3>
+                    <p>198097 Россия, Санкт-Петербург, пр. Стачек, д. 47</p>
+                </div>
+            </div>
+
+            <div class="contacts-map">
+                <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a><a href="https://yandex.ru/maps/profile?ll=30.261393%2C59.880136&utm_medium=mapframe&utm_source=maps&z=16.72" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CCQpfDUATD" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>
+        </div>
+
+
+
+        <aside class="contacts-sidebar">
+            <nav class="contacts-sidebar__nav">
+                <ul class="contacts-sidebar__nav-list">
+                    <li class="contacts-sidebar__nav-item active"><a href="#extend">Контакты</a></li>
+                    <li class="contacts-sidebar__nav-item"><a href="#extend">Руководство</a></li>
+                    <li class="contacts-sidebar__nav-item"><a href="#extend">Пресс-центр</a></li>
+                    <li class="contacts-sidebar__nav-item"><a href="#extend">Дочерние компании</a></li>
+                    <li class="contacts-sidebar__nav-item"><a href="#extend">Трудоустройство</a></li>
+                    <li class="contacts-sidebar__nav-item"><a href="#extend">Аренда</a></li>
+                    <li class="contacts-sidebar__nav-item"><a href="#extend">Музей</a></li>
+                </ul>
+            </nav>
+<!--            <section class="contacts-sidebar__contacts">-->
+<!--                <div class="contacts-social-container">-->
+<!--                    <ul class="contacts-social__list">-->
+<!--                        <li class="contacts-social__list-item"><a href="#fb">-->
+<!--                            <svg width="9" height="19" viewBox="0 0 9 19" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <path d="M8.63758 9.4817H5.96809V19H1.92358V9.4817H0V6.13659H1.92358V3.97193C1.92358 2.42396 2.67909 0 6.00409 0L9 0.0121987V3.2592H6.82627C6.46972 3.2592 5.96835 3.43258 5.96835 4.171V6.13971H8.99093L8.63758 9.4817Z" fill="black"/>-->
+<!--                            </svg>-->
+<!--                        </a></li>-->
+<!--                        <li class="contacts-social__list-item"><a href="#vk">-->
+<!--                            <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.80669 9.95813H9.88262C9.88262 9.95813 10.2076 9.92339 10.3735 9.7492C10.5263 9.58928 10.5214 9.28897 10.5214 9.28897C10.5214 9.28897 10.5004 7.88305 11.1704 7.67602C11.8309 7.47208 12.6791 9.03482 13.5781 9.63569C14.2579 10.0904 14.7745 9.99073 14.7745 9.99073L17.1783 9.95813C17.1783 9.95813 18.4358 9.8827 17.8396 8.91988C17.7907 8.84111 17.4923 8.20764 16.0523 6.90596C14.5451 5.54359 14.7469 5.76395 16.5625 3.40735C17.6683 1.97217 18.1103 1.09597 17.9722 0.720697C17.8405 0.363269 17.0273 0.457743 17.0273 0.457743L14.3207 0.474163C14.3207 0.474163 14.1201 0.44751 13.9713 0.53413C13.8259 0.619085 13.7323 0.817075 13.7323 0.817075C13.7323 0.817075 13.3039 1.92767 12.7326 2.87216C11.5274 4.86515 11.0455 4.97033 10.8486 4.84658C10.3904 4.55817 10.5048 3.68792 10.5048 3.06968C10.5048 1.13833 10.8056 0.333048 9.91903 0.124588C9.62482 0.0553397 9.40831 0.0096499 8.65592 0.00227289C7.6902 -0.00748379 6.87281 0.00512819 6.40999 0.225962C6.10209 0.372789 5.86457 0.699994 6.00923 0.718794C6.1881 0.742114 6.59326 0.825165 6.80805 1.11001C7.0854 1.47744 7.07563 2.30271 7.07563 2.30271C7.07563 2.30271 7.23495 4.57625 6.70346 4.85872C6.33863 5.05243 5.83818 4.65692 4.76372 2.84884C4.21317 1.92267 3.79751 0.898935 3.79751 0.898935C3.79751 0.898935 3.71736 0.707609 3.5744 0.605283C3.40091 0.481301 3.1585 0.4418 3.1585 0.4418L0.586584 0.458218C0.586584 0.458218 0.200492 0.46869 0.0587613 0.632174C-0.0673297 0.777572 0.0487424 1.07836 0.0487424 1.07836C0.0487424 1.07836 2.06229 5.66591 4.34219 7.97776C6.43271 10.0973 8.80669 9.95813 8.80669 9.95813Z" fill="black"/>-->
+<!--                            </svg>-->
+<!--                        </a></li>-->
+<!--                        <li class="contacts-social__list-item"><a href="#youtube">-->
+<!--                            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <path d="M18.2594 1.11596C17.5736 0.323322 16.3073 0 13.8891 0H5.11075C2.63714 0 1.34943 0.344178 0.666165 1.18806C0 2.01084 0 3.22316 0 4.90102V8.09903C0 11.3496 0.7904 13 5.11075 13H13.8891C15.9862 13 17.1483 12.7147 17.9001 12.0152C18.6711 11.2979 19 10.1267 19 8.09903V4.90102C19 3.13157 18.9485 1.91211 18.2594 1.11596ZM12.1981 6.94154L8.21186 8.96699C8.12275 9.01227 8.02529 9.03474 7.92796 9.03474C7.81776 9.03474 7.70781 9.0059 7.61042 8.94858C7.42704 8.84054 7.31506 8.6473 7.31506 8.43886V4.40097C7.31506 4.19288 7.42673 3.99982 7.60975 3.89173C7.79282 3.78364 8.02051 3.77625 8.21045 3.87218L12.1967 5.88458C12.3995 5.98695 12.5268 6.1905 12.5271 6.41258C12.5274 6.63485 12.4006 6.8387 12.1981 6.94154Z" fill="black"/>-->
+<!--                            </svg>-->
+<!--                        </a></li>-->
+<!--                        <li class="contacts-social__list-item"><a href="#insta">-->
+<!--                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <path d="M19 5.45194C19 2.35917 16.8044 0 13.7117 0H5.64722C2.55444 0 0 2.62306 0 5.71583V13.7803C0 16.8731 2.29056 19 5.38333 19H13.9756C17.0683 19 19 16.8731 19 13.7803V5.45194ZM17.1528 13.6853C17.1528 15.6644 15.8597 17.1528 13.8806 17.1528H5.47833C3.49917 17.1528 1.84722 15.6644 1.84722 13.6853V5.54694C1.84722 3.56778 3.49917 1.84722 5.47833 1.84722H13.6167C15.5958 1.84722 17.1528 3.56778 17.1528 5.54694V13.6853Z" fill="black"/>-->
+<!--                                <path d="M9.90569 5C7.20083 5 5 7.20083 5 9.90569C5 12.6106 7.20083 14.8114 9.90569 14.8114C12.6106 14.8114 14.8114 12.6106 14.8114 9.90569C14.8114 7.20083 12.6106 5 9.90569 5ZM12.8639 9.90569C12.8639 11.5365 11.5365 12.8639 9.90569 12.8639C8.27486 12.8639 6.9475 11.5365 6.9475 9.90569C6.9475 8.27486 8.27486 6.9475 9.90569 6.9475C11.5365 6.9475 12.8639 8.27486 12.8639 9.90569Z" fill="black"/>-->
+<!--                            </svg>-->
+<!--                        </a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <h4 class="contacts-social__list-item-subscribe">-->
+<!--                    Подписаться на наши новости-->
+<!--                </h4>-->
+<!--                <div class="contacts__email-input">-->
+<!--                    <input type="text" placeholder="E-mail">-->
+<!--                    <button type="button" class="contacts__email-input-icon">-->
+<!--                        <span>-->
+<!--                            <svg width="31" height="26" viewBox="0 0 31 26" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3.77969V21.7797C0 23.7679 1.38792 25.3797 3.1 25.3797H27.9C29.6121 25.3797 31 23.7679 31 21.7797V3.77969C31 1.79146 29.6121 0.179688 27.9 0.179688H3.1C1.38792 0.179688 0 1.79146 0 3.77969ZM29.45 3.81012V3.77969C29.45 2.78558 28.756 1.97969 27.9 1.97969H3.1C2.24396 1.97969 1.55 2.78558 1.55 3.77969V3.81012L14.3038 12.6966C15.0401 13.2097 15.9599 13.2097 16.6962 12.6966L29.45 3.81012ZM1.55 5.90926V21.7797C1.55 22.7738 2.24396 23.5797 3.1 23.5797H27.9C28.756 23.5797 29.45 22.7738 29.45 21.7797V5.90926L17.4937 14.2401C16.2665 15.0952 14.7335 15.0952 13.5063 14.2401L1.55 5.90926Z" fill="white"/>-->
+<!--                            </svg>-->
+<!--                         </span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </section>-->
+        </aside>
+    </div>
+</main>
+<script src="./js/script.min.js"></script>
+<script>
+    function toggleDropDown() {
+        let x = document.getElementById("menu-container");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>
