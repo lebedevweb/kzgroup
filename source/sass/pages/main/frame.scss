@@ -1,0 +1,58 @@
+.frame{
+    height: 175px;
+   
+}
+.parallax__img--frame{
+    // position: fixed;
+    background-size: cover;
+    background-image: url(../img/main/frame-bg-mobile.jpg);
+    --overflow: 200px;
+   
+    height: calc(175px + (2 * var(--overflow))) !important;
+    top: calc( -1 * var(--overflow));
+}
+
+@media(min-width: 767px){
+    .frame{
+        height: 225px;
+    }
+    .parallax__img--frame{
+        // position: fixed;
+        background-size: cover;
+        background-image: url(../img/main/frame-bg-mobile.jpg);
+        // --overflow: -500px;
+       
+        // height: calc(225px + (2 * var(--overflow)));
+        // top: calc( -1 * var(--overflow));
+    }
+}
+
+@media(min-width: 1280px){
+    .frame{
+        height: 360px;
+    }
+    .parallax__img--frame{
+        // position: fixed;
+        background-size: cover;
+        background-image: url(../img/main/frame-bg-mobile.jpg);
+        // --overflow: -500px;
+       
+        // height: calc(360px + (2 * var(--overflow)));
+        // top: calc( -1 * var(--overflow));
+    }
+}
+
+@media(min-width: 1680px){
+    .frame{
+        height: 575px;
+    }
+    .parallax__img--frame{
+        // position: fixed;
+        background-size: cover;
+        background-image: url(../img/main/frame-bg.jpg);
+        --overflow: 300px;
+   
+        height: calc(175px + (2 * var(--overflow))) !important;
+        top: calc( -1 * var(--overflow));
+    }
+}

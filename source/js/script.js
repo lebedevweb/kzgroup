@@ -1,8 +1,8 @@
 'use strict'
 
-import Swiper, { Scrollbar, Thumbs, EffectFade } from 'swiper';
+import Swiper, { Scrollbar, Thumbs,  Navigation, EffectFade } from 'swiper';
 
-Swiper.use([Scrollbar, Thumbs,EffectFade ]);
+Swiper.use([Scrollbar, Thumbs,EffectFade, Navigation ]);
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -93,7 +93,7 @@ function socialInteraction() {
 
 function headerShowAndHideDesktop() {
 	let traktorsContainer = document.querySelector('.traktors__container');
-	let twoScreen = document.querySelector('.kirovets_about');
+	let twoScreen = document.querySelector('.about');
 	
 	
 	if(getCoords(header).top > 50 && getCoords(twoScreen).top >= scrollbar.offset.y){
@@ -216,37 +216,95 @@ if(containerNavScroll){
 // Инициализация свайперов
 	let swiperStatistics;
 	let swiperTabFeature;
+
+	
 	const enableSwiper = function(){
-		swiperStatistics = new Swiper('.kirovets_statistics__slider',{
-			scrollbar: {
-				el: '.swiper-scrollbar',
-			},
-		});
-		swiperTabFeature = new Swiper('.kirovets_tabs__features',{
+		if(document.querySelector('.statistics__slider')){
+			swiperStatistics = new Swiper('.statistics__slider',{
+				scrollbar: {
+					el: '.swiper-scrollbar',
+				},
+			});
+		}
+		if(document.querySelector('.kirovets_tabs__features')){
+			swiperTabFeature = new Swiper('.kirovets_tabs__features',{
+				// autoHeight: true,
+				scrollbar: {
+					el: '.swiper-scrollbar',
+				},
+			});
+		}
+		
+	}
+	let swiperTab;
+	let swiperTabThumbs;
+	
+
+
+	if(document.querySelector('.news__container')){
+		let newNavPrev = document.querySelector('.news__container .swiper-button-next');
+		let newNavNext = document.querySelector('.news__container .swiper-button-prev');
+
+
+		let swiperNews = new Swiper('.news__container',{
 			// autoHeight: true,
+			
+			slidesPerView: 'auto',
+			spaceBetween: 0,
 			scrollbar: {
-				el: '.swiper-scrollbar',
+				el: '.swiper-scrollbar--news',
+			},
+			navigation: {
+				nextEl: newNavPrev,
+				prevEl: newNavNext,
+			},
+			observer: true, 
+			observeParents: true,
+			// updateOnWindowResize: true,
+			breakpoints: {
+				500: {
+				spaceBetween: 20,
+				
+				},
+				767: {
+					spaceBetween: 20,
+					
+					
+				},
+				1280:{
+					spaceBetween: 35,
+					
+				}
+			}
+		});
+	}
+
+
+
+
+
+	if(document.querySelector('.kirovets_tabs__list-wrap')){
+		swiperTabThumbs = new Swiper('.kirovets_tabs__list-wrap', {
+
+			slidesPerView: 2,
+
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+		});
+	}
+
+	if(document.querySelector('.kirovets_tabs__container')){
+		swiperTab = new Swiper('.kirovets_tabs__container',{
+		
+			thumbs: {
+				swiper: swiperTabThumbs
+			},
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
 			},
 		});
 	}
-	let swiperTabThumbs = new Swiper('.kirovets_tabs__list-wrap', {
-
-		slidesPerView: 2,
-
-		watchSlidesVisibility: true,
-		watchSlidesProgress: true,
-	});
-	
-	let swiperTab = new Swiper('.kirovets_tabs__container',{
-	
-		thumbs: {
-			swiper: swiperTabThumbs
-		},
-		effect: 'fade',
-		fadeEffect: {
-			crossFade: true
-		},
-	});
 
 
 
@@ -269,7 +327,7 @@ if(containerNavScroll){
 	const breakpointChecker = function() {
 		// if larger viewport and multi-row layout needed
 		if ( breakpoint.matches === true ) {
-
+			
 			if (swiperStatistics != null) {
 				swiperStatistics.destroy(true, true);
 				}
@@ -306,6 +364,7 @@ if(containerNavScroll){
 
 		} else if ( breakpoint.matches === false ) {
 			
+	
 
 
 			for(let i = 0; i<InnerSliders.length; i++){
@@ -438,7 +497,7 @@ if(containerNavScroll){
 	}
 	
 
-	if(document.body.classList.contains("kirovets")){
+
 
 
 	// Анимация
@@ -467,21 +526,10 @@ if(containerNavScroll){
 				// once: true,
 			});
 		});
-		gsap.utils.toArray('.button-more--traktors').forEach(element => {
-			ScrollTrigger.create({
-				trigger: element,
-				start: 'bottom bottom',
-				scrub: true,
-				toggleClass: 'is-inview-line',
-				// this toggles the class again when you scroll back up:
-				toggleActions: 'play none none none',
-				// this removes the class when the scrolltrigger is passed:
-				// once: true,
-			});
-		});
+	
 
-
-		gsap.fromTo(".title--inner-main",{
+	gsap.utils.toArray('.title--inner-main').forEach(element => {
+		gsap.fromTo(element,{
 			y: '130%',
 			rotateX: "-40deg",
 			opacity: 0 
@@ -497,10 +545,10 @@ if(containerNavScroll){
 
 			}
 		);
+    });
 
-
-
-		gsap.fromTo(".title--inner",{
+	gsap.utils.toArray('.title--inner').forEach(element => {
+		gsap.fromTo(element,{
 		y: '130%',
 		rotateX: "-40deg",
 		opacity: 0 
@@ -519,8 +567,9 @@ if(containerNavScroll){
 				// scrub: true,
 				start: "bottom bottom"
 			} 
-		}
+			}
 		);
+	});
 
 		gsap.fromTo(".footer__outer",{
 			y: '-20%',
@@ -532,8 +581,8 @@ if(containerNavScroll){
 			// pin: true,
 			// force3D: true,
 			scrollTrigger: {
-				trigger: ".kirovets_statistics",
-				start: 'bottom bottom',
+				trigger: ".footer",
+				start: 'top bottom',
 				// pin: true,
 				toggleActions: "play reverse play reverse"
 				// scrub: true,
@@ -563,32 +612,30 @@ if(containerNavScroll){
 	});
 
 
-		gsap.fromTo(".title--inner-main",{
-			y: '130%',
-			rotateX: "-40deg",
-			opacity: 0 
-			}, {
-				y: "0%",
-			rotateX: 0,
-			opacity: 1,
 
-			duration: 2,
-			stagger: .13,
-			ease: "power3.out",
-			delay: .2,
-					
-		}
-	);
 
-	gsap.utils.toArray('.button-line').forEach(element => {
-		ScrollTrigger.create({
-			trigger: element,
-			toggleClass: 'is-inview',
-		});
+	
+
+
+gsap.utils.toArray('.button-more').forEach(element => {
+	ScrollTrigger.create({
+		trigger: element,
+		start: 'bottom bottom',
+		scrub: true,
+		toggleClass: 'is-inview-line',
+		// this toggles the class again when you scroll back up:
+		toggleActions: 'play none none none',
+		// this removes the class when the scrolltrigger is passed:
+		// once: true,
 	});
-}
+});
 
-
+gsap.utils.toArray('.button-line').forEach(element => {
+	ScrollTrigger.create({
+		trigger: element,
+		toggleClass: 'is-inview',
+	});
+});
 
 let socialContainer = document.querySelector('.social__btn-list');
 if(socialContainer){
@@ -610,7 +657,6 @@ if(burger){
 	burger.addEventListener('click', function(){
 		document.body.classList.toggle('has-nav-open');
 		document.body.classList.remove('has-search-open');
-		scrollbarNav.setPosition(0, 0);
 
 		for (let i = 0; i < navLink.length; i++) {
 			navLink[i].addEventListener('mouseover', function() {
@@ -750,3 +796,57 @@ for (i = 0; i < navItem.length; i++) {
 
 
 
+//Добавление класса active к городам section-geography__map-item в рандомном порядке 
+var toggleActiveClass = function () {
+	var elements = document.querySelectorAll('.section-geography__map-item');
+	for (var i = 0; i < elements.length; i++) {
+  
+	  if (elements[i].classList.contains('active')) {
+		elements[i].classList.remove('active');
+		var nextActive = Math.floor(Math.random() * elements.length);
+		while (nextActive == i) {
+		  nextActive = Math.floor(Math.random() * elements.length);
+		}
+		elements[nextActive].classList.add('active');
+		break;
+	  }
+  
+	}
+  }
+  
+  var elements = document.querySelectorAll('.section-geography__map-item');
+  var startTogglingActiveClass = function () {
+	
+	elements[0].classList.add('active');
+	 return setInterval (toggleActiveClass, 2000);
+  }
+  
+  var intervalID = startTogglingActiveClass();
+  
+  // onhover -> clearInterval(intervalID);
+  // onhover off -> ;
+  
+  
+  
+  // elements.addEventListener('onmouseover', function () {
+  //   clearInterval(intervalID);
+  // });
+  // elements.addEventListener('onmouseover', clearInterval(intervalID));
+  // elements.addEventListener('onmouseout', function () {
+  //   intervalID = startTogglingActiveClass();
+  // });
+  
+  // for (var i = 0; i < elements.length; i++) {
+  // elements[i].addEventListener('mouseenter', function () {
+  //   console.log("stop toggling");
+  //   clearInterval(intervalID);
+  // });
+  
+  // elements[i].addEventListener('mouseleave', function () {
+  //   console.log("start toggling again");
+  //   intervalID = startTogglingActiveClass();
+  // });
+  // }
+  
+  
+  

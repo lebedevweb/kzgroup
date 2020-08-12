@@ -1,0 +1,108 @@
+
+
+
+.about{
+	min-height: 370px;
+	background-size: contain;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+}
+
+.about__title{
+	@extend %block-title;
+	padding-top: 45px;
+	width: 100%;
+	position: relative;
+}
+.about__desc{
+	@extend %upper-text;
+	padding-top: 35px;
+	width: 90%;
+	position: relative;
+}
+
+
+.parallax__img--kirovets_about{
+
+	background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+ 
+  position: absolute;
+	// z-index: -1;
+	height: 370px;
+	// background-size: 100% auto;
+}
+
+.about{
+	position: relative;
+	overflow: hidden;
+
+
+}
+
+@media(min-width: 767px){
+	.about{
+		min-height: 505px;
+	}
+	.about__title{
+		padding-top: 100px;
+		width: 90%;
+	}
+	.about__desc{
+		
+		padding-top: 20px;
+		width: 85%;
+	}
+
+
+
+}
+
+@media(min-width: 1280px){
+	.about{
+		min-height: 660px;
+		position: relative;
+		background-image: none;
+	}
+
+	.about__title{
+		padding-top: 125px;
+		width: 75%;
+	}
+	.about__desc{
+		
+		padding-top: 30px;
+		width: 92%;
+	}
+	
+
+}
+
+@media(min-width: 1680px){
+	.about{
+		min-height: 960px;
+	}
+
+
+
+	.about__title{
+		padding-top: 215px;
+		// padding-left: 70px;
+		width: 82%;
+	}
+	.about__desc{
+		
+		padding-top: 35px;
+	
+		width: 70%;
+	}
+
+
+
+
+
+}

@@ -17,7 +17,7 @@
 	@include list-destroy;
 	display: flex;
 	justify-content: space-between;
-	padding: 0px 60px;
+	padding: 0px 15%;
 
 }
 
@@ -282,14 +282,30 @@
 		width: 25%;
 		height: 0;
 	}
+
+	
 	.footer__nav-item{
 		width: 25%;
 		
 		// flex-shrink: 0;
 	}
+	
+
 	.footer__nav-item--last{
 		height: 0;
 		width: 25%;
+	}
+	.footer--main .footer__nav-item{
+		width: 20%;
+	}
+	.footer--main .footer__nav-item--last{
+		
+		width: 20%;
+	}
+	.footer--main .footer__nav-list::after{
+	
+		width: 20%;
+	
 	}
 	.footer__nav-link{
 		font: inherit;

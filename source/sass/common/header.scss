@@ -230,7 +230,39 @@ background: transparent;
 .has-nav-open .c-nav-button_line::before,.has-nav-open .c-nav-button_line::after{
 	background-color: #ffffff !important;
 }
+
+
+
+.container--header--main{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header__logo-unversity-icon{
+	width: 30px;
+	height: 20px;
+	margin-left: 5px;
+}
+.header__university-text{
+	font-size: 10px;
+	line-height: 9px;
+	text-align: right;
+	color: #FFFFFF;
+	font-family: $font-text-regular;
+}
+.header__wrapper--university{
+	display: block;
+}
+@media(max-width: 360px){
+	.header__wrapper--university{
+		display: none;
+	}
+}
+
 @media(min-width: 767px){
+	.header__wrapper--university{
+		display: block;
+	}
 	.container--header{
 		
 		padding-left: 2%;
@@ -299,6 +331,18 @@ background: transparent;
 		line-height: 100%;
 
 		padding-left: 10px;
+	}
+
+
+	.header__logo-unversity-icon{
+		width: 50px;
+		height: 30px;
+		margin-left: 10px;
+	}
+	.header__university-text{
+		font-size: 12px;
+		line-height: 11px;
+
 	}
 }
 

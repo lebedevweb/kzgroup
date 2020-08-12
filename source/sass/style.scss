@@ -14,17 +14,31 @@
 
 // @import 'common/nav';
 @import 'common/nav2';
+@import 'common/about';
+
+
+
+@import 'pages/main/frame';
 @import 'pages/kirovets/main';
-@import 'pages/kirovets/about';
+
+
+@import 'pages/kirovets/about-kirovets';
+@import 'pages/main/about-main';
+
+
 @import 'pages/kirovets/advant';
 @import 'pages/kirovets/zavod';
+@import 'pages/main/zavod-main';
 
 @import 'pages/kirovets/statistics';
+@import 'pages/main/statistics.scss';
 
 @import 'pages/kirovets/tabs';
 @import 'pages/kirovets/traktors';
 @import 'pages/kirovets/popup';
-// company_group
+
+
+
 @import 'pages/company_group/_company-group';
 
 @import 'pages/actioners/actioners';
@@ -39,6 +53,13 @@
 @import 'pages/rent_noinfo/main';
 
 @import 'pages/contacts/contacts';
+
+
+@import 'pages/main/geography-style';
+@import 'pages/main/geography-media';
+
+
+@import 'common/news';
 
 body{
 	margin: 0;
@@ -158,7 +179,7 @@ figure{
 	height: 100%;
 	width: 100%;
 	will-change: transform;
-	perspective: 1000px;
+	// perspective: 1000px;
 	
 }
 

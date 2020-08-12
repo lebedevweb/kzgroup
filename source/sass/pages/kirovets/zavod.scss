@@ -1,18 +1,18 @@
-.kirovets_zavod{
+.zavod{
 	background-color: $bg-color-light-grey;
 
 	padding-top: 40px;
 	padding-bottom: 70px;
 }
 
-.kirovets_zavod-img-wrap{
+.zavod-img-wrap{
 	display: none;
 }
-.kirovets_zavod__title--desktop{
+.zavod__title--desktop{
 	display: none;
 }
 
-.kirovets_zavod__title{
+.zavod__title{
 	color:  $black-grey;
 	@extend %block-title;
 	font-size: 22px;
@@ -20,12 +20,12 @@
 
 }
 
-.kirovets_zavod-text p{
+.zavod-text p{
 	margin-top: 15px;
 	@extend %block-text;
 }
 
-.kirovets_button{
+.button{
 	@extend %btn-bordered;
 	margin-top: 50px;
 }
@@ -33,7 +33,7 @@
 
 @media(min-width: 767px){
 
-	.kirovets_zavod__title{
+	.zavod__title{
 
 
 		font-size: 26px;
@@ -41,28 +41,28 @@
 	
 	}
 	
-	.kirovets_zavod{
+	.zavod{
 		padding-top: 80px;
 		padding-bottom: 60px;
 	}
-	.kirovets_button{
+	.button{
 		margin-top: 50px;
 	}
-	.kirovets_zavod-text p{
+	.zavod-text p{
 		margin-top: 25px;
 
 	}
 }
 
 @media(min-width: 1280px){
-	.kirovets_zavod{
+	.zavod{
 		padding-top: 70px;
 		padding-bottom: 85px;
 	}
-	.kirovets_button{
+	.button{
 		margin-top: 25px;
 	}
-	.kirovets_zavod-img-wrap{
+	.zavod-img-wrap{
 		display: block;
 			width: 30%;
 		
@@ -72,54 +72,54 @@
 			box-sizing: border-box;
 	}
 	
-	.kirovets_zavod__title{
+	.zavod__title{
 
 
 		font-size: 36px;
 		line-height: 40px;
 	
 	}
-	.kirovets_zavod-wrapper{
+	.zavod-wrapper{
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
 	}
 
-	.kirovets_zavod-text{
+	.zavod-text{
 		width: 75%;
 	}
-	.kirovets_button{
+	.button{
 		margin-top: 30px;
 	}
-	.kirovets_zavod-text p{
+	.zavod-text p{
 		margin-top: 25px;
 
 	}
 }
 
 @media(min-width: 1680px){
-	.kirovets_zavod{
+	.zavod{
 		padding-top: 150px;
 		padding-bottom: 150px;
 		
 	}
-	.kirovets_button{
+	.button{
 		margin-top: 50px;
 	}
-	.kirovets_zavod__title--all{
+	.zavod__title--all{
 		display: none;
 	}
-	.kirovets_zavod__title--desktop{
+	.zavod__title--desktop{
 		display: block;
 	}
-	.kirovets_zavod__title{
+	.zavod__title{
 
 		font-size: 46px;
 		line-height: 49px;
 		width: 75%;
 	
 	}
-	.kirovets_zavod-wrapper{
+	.zavod-wrapper{
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -128,7 +128,7 @@
 		padding-right: 50px;
 		margin-top: 35px;
 	}
-	.kirovets_zavod-img-wrap{
+	.zavod-img-wrap{
 		display: block;
 			width: 20%;
 			flex-shrink: 0;
@@ -137,13 +137,13 @@
 			margin-top: 80px;
 
 	}
-	.kirovets_zavod-text{
+	.zavod-text{
 		width: 76%;
 	}
-	.kirovets_button{
+	.button{
 		margin-top: 35px;
 	}
-	.kirovets_zavod-text p{
+	.zavod-text p{
 		margin-top: 35px;
 
 	}

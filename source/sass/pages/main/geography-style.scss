@@ -1,0 +1,644 @@
+
+.section-geography {
+	height: 100%;
+}
+.section-geography__body {
+	height: 70%;
+	margin-top: 155px;
+}
+.section-geography__footer {
+
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.geography{
+    position: relative;
+    width: 100%;
+  }
+  .geography::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+   
+    height: 75px;
+    background: #1D1E25;
+  }
+.section-geography__map,
+.section-geography__wrapper .section-geography__desc {
+	width: 50%;
+	padding: 0 50px;
+}
+.section-geography__wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	padding: 0;
+}
+.section-geography__map {
+	position: relative;
+}
+.section-geography__map-item {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	line-height: 14px;
+	color: #000;
+	text-decoration: none;
+	position: absolute;
+	font-family:'HeliosExt';
+	/*z-index: 20;*/
+}
+.section-geography__map-item .section-geography__map-item-label {
+	opacity: 0;
+	background-color: #fafafa;
+    padding: 5px;
+    margin-left: 5px;
+}
+.section-geography__map-item.active .section-geography__map-item-label,
+.section-geography__map-item:hover .section-geography__map-item-label {
+	opacity: 1;
+	color: #E51C26;
+	font-weight: bold;
+	z-index: 10;
+	-webkit-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -o-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(196,194,196,0.72);
+	-moz-box-shadow: 10px 10px 10px 0px rgba(196,194,196,0.72);
+	box-shadow: 10px 10px 10px 0px rgba(196,194,196,0.72);
+}
+.section-geography__map-item .map-marker-icon {
+	display: block;
+    width: 22px;
+    height: 40px;
+    background-image: url(../img/geography/map.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.section-geography__map-item.active .map-marker-icon,
+.section-geography__map-item:hover .map-marker-icon {
+	background-image: url(../img/geography/map2.svg);
+	z-index: 10;
+}
+.map-item__england .map-marker-icon,
+.map-item__ireland .map-marker-icon,
+.map-item__netherlands .map-marker-icon,
+.map-item__belgium .map-marker-icon,
+.map-item__france .map-marker-icon,
+.map-item__denmark .map-marker-icon,
+.map-item__germany .map-marker-icon,
+.map-item__czech .map-marker-icon,
+.map-item__austria .map-marker-icon,
+.map-item__liechtenstein .map-marker-icon,
+.map-item__switzerland .map-marker-icon,
+.map-item__finland .map-marker-icon,
+.map-item__estonia .map-marker-icon, 
+.map-item__latvia .map-marker-icon,
+.map-item__lithuania .map-marker-icon,
+.map-item__poland .map-marker-icon,
+.map-item__slovakia .map-marker-icon,
+.map-item__hungary .map-marker-icon,
+.map-item__romania .map-marker-icon,
+.map-item__bulgaria .map-marker-icon,
+.map-item__moldova .map-marker-icon,
+.map-item__ukraine .map-marker-icon,
+.map-item__belarus .map-marker-icon {
+	width: 15px;
+    height: 33px;
+}
+
+/*.section-geography__map-item.active .map-marker-icon{
+	fill: #E51C26;
+	z-index: 10;
+}
+.section-geography__map-item .map-marker-icon svg path {
+	fill: black;
+}
+.section-geography__map-item.active .map-marker-icon svg path {
+	fill:  red;
+}*/
+.map-item__canada {
+	top: 18%;
+    left: 15%;
+}
+.map-item__usa {
+	top: 26%;
+    left: 10%;
+}
+.map-item__england {
+	top: 14%;
+    left: 35%;
+}
+.map-item__ireland {
+	top: 15%;
+    left: 33%;
+}
+.map-item__netherlands {
+	top: 16%;
+    left: 38%;
+}
+.map-item__belgium {
+	top: 18%;
+    left: 38%;
+}
+.map-item__france {
+	top: 20%;
+    left: 37%;
+}
+.map-item__denmark {
+	top: 14%;
+    left: 42%;
+}
+.map-item__germany {
+	top: 16%;
+    left: 40%;
+}
+.map-item__czech {
+	top: 19%;
+    left: 40%;
+}
+.map-item__austria {
+	top: 18%;
+    left: 41%;
+}
+.map-item__liechtenstein {
+	top: 20%;
+    left: 39%;
+}
+.map-item__switzerland {
+	top: 22%;
+    left: 38%;
+}
+.map-item__finland {
+	top: 11%;
+    left: 47%;
+}
+.map-item__estonia {
+	top: 13%;
+    left: 46%;
+}
+.map-item__latvia {
+	top: 15%;
+    left: 46%;
+}
+.map-item__lithuania {
+	top: 16%;
+    left: 45%;
+}
+.map-item__poland {
+	top: 18%;
+    left: 43%;
+}
+.map-item__slovakia {
+	top: 20%;
+    left: 42%;
+}
+.map-item__hungary {
+	top: 20%;
+    left: 45%;
+}
+.map-item__romania {
+	top: 22%;
+    left: 45%;
+}
+.map-item__bulgaria {
+	top: 23%;
+    left: 43%;
+}
+.map-item__moldova {
+	top: 20%;
+    left: 48%;
+}
+.map-item__ukraine {
+	top: 18%;
+    left: 49%;
+}
+.map-item__belarus {
+	top: 17%;
+    left: 47%;
+}
+.map-item__kazakhstan {
+	top: 21%;
+    left: 60%;
+}
+.map-item__uzbekistan {
+	top: 25%;
+    left: 58%;
+}
+.map-item__mongolia {
+	top: 21%;
+    left: 67%;
+}
+.map-item__india {
+	top: 40%;
+    left: 67%;
+}
+.map-item__australia {
+	top: 70%;
+    left: 68%;
+    display: flex;
+}
+.map-item__australia .map-marker-icon {
+	order: 2;
+}
+.section-geography__map-item-label {
+	order: 1;
+}
+/*.map-marker-icon {
+	width: 15px;
+    height: 15px;
+    display: block;
+}*/
+
+
+
+
+.section-geography__wrapper .section-geography__desc  {
+	display: flex;
+    align-items: center;
+}
+
+.section-geography__title-wrapper{
+	display: none;
+}
+.section-geography__desc p {
+	font-family: $font-bold-2-title;
+	font-weight: bold;
+	font-size: 37px;
+	line-height: 54px;
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+    margin: 0 auto;
+    position: relative;
+	padding-top: 30px;
+	color: $black-grey;
+}
+.section-geography__desc p:before {
+	position: absolute;
+    top: 0;
+    left: calc(50% - 50px);
+    content: '';
+    width: 100px;
+    height: 5px;
+	background-color: $red-color;
+	font-family: $font-regular;
+}
+.section-geography__desc span {
+	display: block;
+	color: $red-color;
+	font-size: 36px;
+	line-height: 144%;
+	font-weight: bold;
+	font-family: $font-bold-2-title;
+}
+.section-geography__desc span > span {
+	font-size: 114px;
+	line-height: 130px;
+
+	font-weight: bold;
+}
+.section-geography__footer .section-geography__desc {
+	display: none;
+}
+.section-geography__map-planet {
+    -webkit-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -o-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    border-radius: 100%;
+    overflow: hidden;
+    width: 640px;
+    height: 640px;
+    position: relative;
+   /* margin: 0 auto;*/
+   /* z-index: 5;*/
+}
+.section-geography__map-planet img {
+	width: 100%;
+}
+.section-geography__map-planet:after {
+    position: absolute;
+    display: block;
+    content: "";
+    /*top: -180px;*/
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /*height: 501px;*/
+    /*height: 258px;*/
+    /*z-index: 10;*/
+    background: url(../img/geography/bg-nuage-1.png) repeat-x;
+    -webkit-transition: opacity .8s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: opacity .8s cubic-bezier(.25,.46,.45,.94);
+    transition: opacity .8s cubic-bezier(.25,.46,.45,.94);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: moveCloud1 30s linear infinite;
+    animation: moveCloud1 30s linear infinite;
+}
+.section-geography__map-planet:before {
+
+
+    position: absolute;
+    display: block;
+    content: "";
+    /*bottom: -200px;*/
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /*height: 450px;*/
+    /*height: 258px;*/
+    /*z-index: 10;*/
+    background: url(../img/geography/bg-nuage-1.png) repeat-x;
+    -webkit-transform: translateZ(0) scaleY(-1);
+    transform: translateZ(0) scaleY(-1);
+    -webkit-transition: opacity .8s cubic-bezier(.25,.46,.45,.94);
+    -o-transition: opacity .8s cubic-bezier(.25,.46,.45,.94);
+    transition: opacity .8s cubic-bezier(.25,.46,.45,.94);
+    -webkit-animation: moveCloud2 30s linear infinite;
+    animation: moveCloud2 30s linear infinite;
+}
+
+@-webkit-keyframes moveCloud1 {
+    0% {
+    opacity: 1;
+    background-position: 0 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 817px 0;
+	}
+}
+@keyframes moveCloud1 {
+    0% {
+    opacity: 1;
+    background-position: 0 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 817px 0;
+	}
+}
+@-webkit-keyframes moveCloud2 {
+    0% {
+    opacity: 1;
+    background-position: 408px 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 1225px 0;
+	}
+}
+	@keyframes moveCloud2 {
+	    0% {
+	    opacity: 1;
+	    background-position: 408px 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 1225px 0;
+	}
+}
+
+
+.home-map-right__text {
+	width: 356px;
+	text-align: center;
+	position: relative;
+	margin: 70px auto 0 auto;
+}
+
+.home-map-right__text p {
+	font-family: 'HeliosExt';
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 40px;
+	text-transform: uppercase;
+}
+.home-map-right__text span {
+	display: block;
+	color: #E51C26;
+}
+.home-map-right__text span > span {
+	font-size: 85px;
+	line-height: 105px;
+}
+.home-map-left,
+.home-map-right {
+	width: 50%;
+}
+
+.home-map-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.home-map-left {
+    display: inline-block;
+    position: relative;
+}
+.home-map-left-world {
+    -webkit-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -o-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    border-radius: 100%;
+    overflow: hidden;
+    width: 640px;
+    height: 640px;
+    position: relative;
+    z-index: 5;
+    margin: 0 auto;
+}
+.home-map-left-world img {
+    width: 100%;
+}
+.home-map-left-world:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 258px;
+    z-index: 10;
+    background: url(../img/geography/cloud.png) repeat-x;
+    -webkit-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -o-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: moveCloud1 30s linear infinite;
+    animation: moveCloud1 30s linear infinite;
+}
+.home-map-left-world:before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 258px;
+    z-index: 10;
+    background: url(../img/geography/cloud.png) repeat-x;
+    -webkit-transform: translateZ(0) scaleY(-1);
+    transform: translateZ(0) scaleY(-1);
+    -webkit-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -o-transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    transition: opacity .8s cubic-bezier(.25, .46, .45, .94);
+    -webkit-animation: moveCloud2 30s linear infinite;
+    animation: moveCloud2 30s linear infinite;
+}
+.home-map-left-item {
+	position: absolute;
+    font-size: 12px;
+    z-index: 20;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+}
+.home-map-left-item-strana1 {
+	top: 17%;
+    left: 14%;
+}
+.home-map-left-item-strana2 {
+	top: 24%;
+    left: 8%;
+}
+.home-map-left-item-strana3 {
+	top: 36%;
+    left: 5%;
+}
+.home-map-left-item-strana4 {
+	top: 44%;
+    left: 3%;
+}
+.home-map-left-item-strana5 {
+	top: 48%;
+    left: 2%;
+}
+.home-map-left-item-strana6 {
+	top: 48%;
+    left: 7%;
+}
+
+
+
+
+@-webkit-keyframes moveCloud1 {
+    0% {
+    opacity: 1;
+    background-position: 0 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 817px 0;
+	}
+}
+@keyframes moveCloud1 {
+    0% {
+    opacity: 1;
+    background-position: 0 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 817px 0;
+	}
+}
+@-webkit-keyframes moveCloud2 {
+    0% {
+    opacity: 1;
+    background-position: 408px 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 1225px 0;
+	}
+}
+	@keyframes moveCloud2 {
+	    0% {
+	    opacity: 1;
+	    background-position: 408px 0;
+	}
+	30% {
+	    opacity: .5;
+	}
+	60% {
+	    opacity: 1;
+	}
+	80% {
+	    opacity: .5;
+	}
+	100% {
+	    opacity: 1;
+	    background-position: 1225px 0;
+	}
+}
+
+
+
