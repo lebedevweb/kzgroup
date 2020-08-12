@@ -1,16 +1,22 @@
 .kirovets_advant{
-	min-height: 640px;
-	background-color: #18213D;
+	height: 640px;
+	// background-color: #18213D;
 	// background-image: url(../img/bg-adv.jpg);
 	// background-image: url(../img/bg-adv.jpg);
 
 
 }
 .parallax__img--kirovets_advant{
-	background-size: cover;
+	background-size: auto 100%;
 	background-position: center right;
-	background-image: url(../img/bg-adv.jpg);
+		background-image: url(../img/bg-advant.jpg);
+	// background-image: url(../img/bg-advant-tablet.jpg);
+	--overflow: 100px;
+	height: calc(640px + (2 * var(--overflow))) !important;
+	top: calc( -1 * var(--overflow));
 }
+
+
 .kirovets_advant__title{
 	@extend %block-title-light;
 	padding-top: 40px;
@@ -40,8 +46,19 @@
 	background-color: $light-grey-color;
 }
 @media(min-width: 767px){
+
+	.parallax__img--kirovets_advant{
+		background-size: cover;
+		background-position: center;
+			background-image: url(../img/bg-advant.jpg);
+		// background-image: url(../img/bg-advant-tablet.jpg);
+		// --overflow: 20%;
+		// height: calc(510px + (2 * var(--overflow))) !important;
+		// top: calc( -1 * var(--overflow));
+	}
+	
 	.kirovets_advant{
-		min-height: 510px;
+		height: 510px;
 	}
 	.kirovets_advant__title{
 
@@ -74,6 +91,10 @@
 	.parallax__img--kirovets_advant{
 		background-size: cover;
 		background-position: center center;
+		background-image: url(../img/bg-advant.jpg);
+	}
+	.parallax__img--kirovets_advant img{
+		display: none;
 	}
 	.kirovets_advant__title{
 		padding-top: 125px;
@@ -93,9 +114,20 @@
 	
 }
 
-@media(min-width: 1919px){
+@media(min-width: 1680px){
+
+	.parallax__img--kirovets_advant{
+		background-size: auto 100%;
+		background-position: center right;
+			background-image: url(../img/bg-advant.jpg);
+		// background-image: url(../img/bg-advant-tablet.jpg);
+		--overflow: 200px;
+		height: calc(915px + (2 * var(--overflow))) !important;
+		top: calc( -1 * var(--overflow));
+	}
+	
 	.kirovets_advant{
-		min-height: 915px;
+		height: 915px;
 	}
 	.kirovets_advant__title{
 		padding-top: 185px;

@@ -1,0 +1,94 @@
+.button.button--details.kirovets_button.rent_header-button {
+  @extend %btn-bordered;
+  color: $light-grey-color;
+  border-color: $light-grey-color;
+
+  margin: 10vh 0;
+
+  @media (max-width: 768px) {
+    margin: 0vh 0 30vh 0;
+  }
+
+  &::after {
+    background: $light-grey-color;
+  }
+
+  &:hover{
+		color: #000;
+	}
+}
+.rent_header {
+  position: relative;
+  max-height: 80vh;
+
+  .rent_header-image{
+    max-width: none;
+  }
+
+  .rent_contacts {
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    bottom: 0;
+
+    &-blur {
+      height: 20vh;
+      width: 100%;
+    }
+
+    &-info {
+      position: absolute;
+      bottom: 0;
+      color: $bg-color-light-grey;
+      font-family: $font-text-light;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      height: 20vh;
+
+      padding: 0 5px;
+      width: 100%;
+    
+      @media (min-width: 1921px) {
+        padding: 0 170px;
+        &>span {
+          margin-right: 146px;
+        }
+      }
+    
+      @media (max-width: 1920px) {
+        padding: 0 170px;
+        &>span {
+          margin-right: 146px;
+        }
+      }
+    
+      @media (max-width: 1280px) {
+        padding: 0 100px;
+        &>span {
+          margin-right: 77px;
+        }
+      }
+    
+      @media (max-width: 850px) {
+        padding: 0 60px;
+      }
+    
+      @media (max-width: 768px) {
+        padding: 0 60px;
+        &>span {
+          margin-right: 40px;
+          font-size: 18px;
+        }
+      }
+    
+      @media (max-width: 500px) {
+        padding: 0 20px;
+        &>span {
+          margin-right: 40px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}  

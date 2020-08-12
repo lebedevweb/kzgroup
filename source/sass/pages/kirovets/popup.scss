@@ -1,0 +1,473 @@
+.popup_kirovets{
+	position: fixed !important;
+	top: 0;
+  right: 0;
+  bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+	visibility: hidden;
+  transition: visibility 0s .85s;
+	box-sizing: border-box;
+	top: 0;
+	// background-color: #ffffff;
+
+	z-index: 100000;
+	
+	// display: none !important;
+}
+
+.popup_kirovets.active{
+	visibility: visible;
+	transition-delay: 0s;
+	
+}
+.popup_kirovets__header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20px;
+
+}
+.popup_kirovets__back{
+	@include btn-destroy;
+	// height: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 16px;
+	line-height: 16px;
+	color: $grey-text-paragraf;
+	font-family: $font-regular;
+	
+	
+}
+
+.popup_kirovets__back-icon{
+	width: 68px;
+	height: 8px;
+	padding-right: 10px;
+	position: relative;
+	transition: all 0.5s ease;
+	will-change: transform;
+}
+
+.popup_kirovets__back:hover .popup_kirovets__back-icon{
+	transform: scale(1.1);
+	width: 75px;
+}
+
+
+
+.popup_kirovets__close{
+	@include btn-destroy;
+	width: 25px;
+	height: 25px;
+	position: relative;
+
+}
+
+.popup_kirovets__close .line{
+	position: absolute;
+	top:50%;
+	left: 0;
+	transform: translateY(-50%);
+	height: 1px;
+	width: 100%;
+	background-color: #000000;
+}
+.popup_kirovets__close .line:first-child{
+	transform: translateY(-50%) rotate(45deg);
+}
+.popup_kirovets__close .line:last-child{
+	transform: translateY(-50%) rotate(-45deg);
+}
+
+.traktors__number--popup{
+	padding-top: 0px;
+	margin-top: 35px;
+	width: 220px;
+	height: 80px;
+
+	// background-color: green;
+}
+.popup__wrapper{
+	visibility: hidden;
+	transition: visibility 0.2s ease, opacity 0.5s ease;
+	opacity: 0;
+
+	
+}
+.popup_kirovets.active .popup__wrapper{
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0.25s;
+}
+
+.traktors__number--popup .traktors__number-icon {
+	width: 62px;
+}
+.traktors__number--popup .traktors__number-icon--one {
+	width: 40px;
+	margin-right: 5px;
+}
+.traktors__number--popup .traktors__number-icon--four {
+	width: 72px;
+}
+.social__btn-list--popup {
+	top: 80px;
+}
+
+
+.popup_kirovets__article{
+	padding-bottom: 35px;
+	& h2{
+		@extend %block-title;
+		margin-top: 20px;
+		font-family: $font-bold-title;
+	}
+	& h3{
+		@extend %subtitle-regular;
+		margin-top: 60px;
+	}
+	& p{
+		@extend %block-text;
+		margin-top: 10px;
+	}
+	& p.italic{
+		font-style: italic;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 26px;
+		color: #000000;
+	}
+	& figure{
+		margin-top: 15px;
+	}
+	& figcaption{
+		// margin-top: 5px;
+		color: $grey-text-paragraf;
+		font-family: $font-text-regular;
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+.popup-background{
+	position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.popup-background::before, .popup-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+          transform: scaleX(0);
+
+          transform-origin: center left;
+
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-background::before {
+	
+	background-color: $bg-color-light-grey;
+  transition-delay: 0.25s;
+  z-index: 1;
+}
+
+.popup-background::after {
+	background-color: #ffffff;
+  transition-delay: 0.10s;
+  z-index: 3;
+}
+
+
+.active.popup_kirovets .popup-background::before, .active.popup_kirovets .popup-background::after {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.active.popup_kirovets .popup-background::before {
+  transition-delay: 0s;
+}
+
+.active.popup_kirovets .popup-background::after {
+  transition-delay: 0.15s;
+}
+
+
+@media(min-width: 767px){
+
+	.popup_kirovets__header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 32px;
+	
+	}
+	.popup_kirovets__back{
+
+	
+		font-size: 18px;
+		line-height: 18px;
+
+		
+		
+	}
+
+	.popup_kirovets__close{
+
+		width: 35px;
+		height: 35px;
+		position: relative;
+	
+	}
+
+
+	
+	.traktors__number--popup{
+		padding-top: 0px;
+		margin-top: 40px;
+		width: 385px;
+		height: 120px;
+		// background-color: green;
+	}
+	
+	.traktors__number--popup .traktors__number-icon {
+		width: 95px;
+	}
+	.traktors__number--popup .traktors__number-icon--one {
+		width: 60px;
+		margin-right: 10px;
+	}
+	.traktors__number--popup .traktors__number-icon--four {
+		width: 120px;
+	}
+	.social__btn-list--popup {
+		top: 110px;
+	}
+	
+	
+	.popup_kirovets__article{
+		padding-bottom: 50px;
+		& h2{
+			
+			margin-top: 60px;
+			width: 92%;
+			font-family: $font-bold-title;
+		}
+		& h2 br{
+			display: none;
+		}
+		& h3{
+			
+			margin-top: 40px;
+		}
+		& p{
+		
+			margin-top: 15px;
+		}
+		& p.italic{
+	
+			font-size: 18px;
+			line-height: 26px;
+	
+		}
+		& figure{
+			margin-top: 25px;
+		}
+		& figcaption{
+			margin-top: 5px;
+	
+			font-size: 14px;
+			line-height: 22px;
+		}
+	}
+}
+
+@media(min-width: 1280px){
+	.popup_kirovets__header{
+	
+		padding-top: 52px;
+	
+	}
+	.popup_kirovets__back{
+
+	
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.popup_kirovets__back-icon{
+	
+		padding-right: 10px;
+	}
+
+	.popup_kirovets__close{
+
+		width: 50px;
+		height: 50px;
+
+	}
+
+
+	
+	.traktors__number--popup{
+		padding-top: 0px;
+		margin-top: 60px;
+		width: 625px;
+		height: 190px;
+		// background-color: green;
+	}
+	
+	.traktors__number--popup .traktors__number-icon {
+		width: 160px;
+	}
+	.traktors__number--popup .traktors__number-icon--one {
+		width: 110px;
+	
+	
+		margin-right: 15px;
+	}
+	.traktors__number--popup .traktors__number-icon--four {
+		width: 180px;
+	}
+	.social__btn-list--popup {
+		top: 250px;
+	}
+	
+	
+	.popup_kirovets__article{
+		padding-bottom: 70px;
+		width: 75%;
+		& h2{
+			
+			margin-top: 40px;
+			width: 100%;
+			font-family: $font-bold-title;
+		}
+		& h2 br{
+			display: none;
+		}
+		& h3{
+			
+			margin-top: 70px;
+		}
+		& p{
+		
+			margin-top: 25px;
+		}
+		& p.italic{
+	
+			font-size: 20px;
+			line-height: 30px;
+	
+		}
+		& img{
+			width: 100%;
+		}
+		& figure{
+			margin-top: 25px;
+		}
+		& figcaption{
+			margin-top: 10px;
+	
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+}
+
+
+@media(min-width:1680px){
+	.popup_kirovets__header{
+	
+		padding-top: 45px;
+	
+	}
+
+	.popup_kirovets__close{
+
+		width: 85px;
+		height: 85px;
+
+	}
+
+
+	
+	.traktors__number--popup{
+		padding-top: 0px;
+		margin-top: 60px;
+		width: 772px;
+		height: 220px;
+		// background-color: green;
+	}
+	
+	.traktors__number--popup .traktors__number-icon {
+		width: 190px;
+	}
+	.traktors__number--popup .traktors__number-icon--one {
+		width: 120px;
+	
+	
+		margin-right: 15px;
+	}
+	.traktors__number--popup .traktors__number-icon--four {
+		width: 220px;
+	}
+	.social__btn-list--popup {
+		top: 250px;
+	}
+	
+	
+	.popup_kirovets__article{
+		padding-bottom: 80px;
+		width: 75%;
+		& h2{
+			
+			margin-top: 40px;
+			width: 90%;
+			font-family: $font-bold-title;
+		}
+		& h2 br{
+			display: none;
+		}
+		& h3{
+			
+			margin-top: 80px;
+		}
+		& p{
+		
+			margin-top: 35px;
+		}
+		& p.italic{
+	
+			font-size: 24px;
+			line-height: 34px;
+	
+		}
+		& img{
+			width: 100%;
+		}
+		& figure{
+			margin-top: 35px;
+		}
+		& figcaption{
+			margin-top: 20px;
+	
+			font-size: 18px;
+			line-height: 24px;
+		}
+	}
+}

@@ -1,24 +1,221 @@
 'use strict'
 
+import Swiper, { Scrollbar, Thumbs, EffectFade } from 'swiper';
 
-
-import Swiper, { Scrollbar, Thumbs } from 'swiper';
-
-
-Swiper.use([Scrollbar, Thumbs ]);
+Swiper.use([Scrollbar, Thumbs,EffectFade ]);
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import ScrollbarSmoth from 'smooth-scrollbar';
+
+
+//  высота вьюпорта
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+// Функция получения координат элемента
+function getCoords(elem) {
+	
+	let box = elem.getBoundingClientRect();
+
+	return {
+		top: Math.round(box.top + scrollbar.offset.y),
+		bottom: Math.round(box.bottom + scrollbar.offset.y)
+	};
+}
+
+// Скролл к определенному элементу
+function scrollToTop( element) {
+	let elementTopPosition = getCoords(element).top;
+
+	scrollbar.scrollTo(0, elementTopPosition, 600);
+
+}
+
+// Паралакс эффект на картинках
+
+
+function parallax() {
+	let layers = document.getElementsByClassName("parallax__img");
+	let layer, speed, yPos;
+
+	for (let i = 0; i < layers.length; i++) {
+		layer = layers[i];
+		let top = scrollbar.offset.y- getCoords(layer).top;
+	
+		speed = layer.getAttribute('data-speed');
+		let yPos = -(top * speed / 100);
+		
+		layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
+	}
+}
+
+// Соц.сети
+
+function socialInteraction() {
+	let socialBtn = document.querySelectorAll('.social__btn');
+	let socialDrop = document.querySelectorAll('.social__dropdown');
+	let btnWrap = document.querySelectorAll('.social__btn-item');
+	for(let i = 0; i<socialBtn.length; i++){
+		socialBtn[i].addEventListener('click', function(){
+			socialDrop[i].classList.toggle('active');
+			btnWrap[i].classList.toggle('active');
+
+
+			let socialWrap = document.querySelectorAll('.social__btn-item');
+
+			document.addEventListener('click', function(event){
+				for(let i = 0; i<socialWrap.length; i++){
+					let isClickInside = socialWrap[i].contains(event.target);
+					if (!isClickInside) {
+						socialDrop[i].classList.remove('active');
+						btnWrap[i].classList.remove('active');
+					}
+				}
+			})
+		})
+
+	}
+}
+
+
+// Шапка
+
+function headerShowAndHideDesktop() {
+	let traktorsContainer = document.querySelector('.traktors__container');
+	let twoScreen = document.querySelector('.kirovets_about');
+	
+	
+	if(getCoords(header).top > 50 && getCoords(twoScreen).top >= scrollbar.offset.y){
+		header.classList.add('hide')
+	}else if(getCoords(header).top < 0  || getCoords(header).top > 100 && getCoords(twoScreen).top <= scrollbar.offset.y){
+		header.classList.remove('hide')
+	
+		
+	}
+	if(getCoords(twoScreen).top >= scrollbar.offset.y){
+		header.classList.remove('js-scroll');
+	}else if(getCoords(header).top > 50 && getCoords(twoScreen).top <= scrollbar.offset.y){
+		header.classList.add('js-scroll');
+	}
+	
+	if(traktorsContainer){
+		if(getCoords(header).top > getCoords(traktorsContainer).top && getCoords(header).bottom < getCoords(traktorsContainer).bottom){
+			header.classList.add('js-hide');
+			header.classList.add('js-scroll-hide');
+			
+		}else if(getCoords(header).top < getCoords(traktorsContainer).top || getCoords(header).bottom > getCoords(traktorsContainer).bottom){
+			header.classList.remove('js-hide');
+			header.classList.remove('js-scroll-hide');
+		}
+	}
+
+}
+
+
+function hideAndShowHeaderMobile() {
+	if(scrollbar.offset.y > 0){
+		header.classList.add('hide')
+	}else if(scrollbar.offset.y == 0 ){
+		header.classList.remove('hide')
+
+	}
+}
+// Инициализация плавного скролла
+
+let options  = {
+	damping: 0.02,
+	delegateTo: document
+}
+let options2  = {
+	damping: 0.02,
+	continuousScrolling: false
+	// delegateTo: document
+}
+let options3  = {
+	damping: 0.02,
+	continuousScrolling: false
+	// delegateTo: document
+}
+
+
+const breakpoint = window.matchMedia( '(min-width:767px)' );
+const header = document.querySelector('.header');
+
+// Кнопка для вызова попапа на стр кировец
+let btnMore;
+// Определения координат для GSAP относительно плавного скролла
+ScrollTrigger.scrollerProxy(document.body, {
+  scrollTop(value) {
+    if (arguments.length) {
+      scrollbar.scrollTop = value;
+    }
+    return scrollbar.scrollTop;
+  },
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  }
+});
+
+let containerScroll = document.querySelector('.scroll');
+let scrollbar;
+	if(containerScroll){
+		scrollbar = ScrollbarSmoth.init(containerScroll, options);
+		scrollbar.addListener(ScrollTrigger.update);
+
+
+		scrollbar.addListener(() => {
+			parallax();
+			showAndHideYearNav()
+		})
+		if ( breakpoint.matches === true ) {
+			scrollbar.addListener(() => {
+				
+				if(header){	
+	
+					headerShowAndHideDesktop();
+
+				}
+			})
+		}else if ( breakpoint.matches === false ) {
+			scrollbar.addListener(() => {
+				hideAndShowHeaderMobile();
+			})
+		}
+		
+		
+	}
+
+
+let popupWrap = document.querySelectorAll('.scroll-popup');
+for(let i=0; i<popupWrap.length; i++){
+	let scrollbarPopup = ScrollbarSmoth.init(popupWrap[i], options2);
+	scrollbarPopup.addListener(ScrollTrigger.update);
+}
+let containerNavScroll = document.querySelector('.scroll');
+let scrollbarNav;
+if(containerNavScroll){
+	scrollbarNav = ScrollbarSmoth.init(containerNavScroll, options3);
+	scrollbarNav.addListener(ScrollTrigger.update);
+}
 
 
 
 
-document.addEventListener('DOMContentLoaded', function(){
-	let swiperStatistics
-	let swiperTabFeature
+
+// Инициализация свайперов
+	let swiperStatistics;
+	let swiperTabFeature;
 	const enableSwiper = function(){
 		swiperStatistics = new Swiper('.kirovets_statistics__slider',{
 			scrollbar: {
@@ -33,19 +230,21 @@ document.addEventListener('DOMContentLoaded', function(){
 		});
 	}
 	let swiperTabThumbs = new Swiper('.kirovets_tabs__list-wrap', {
-		// spaceBetween: 10,
+
 		slidesPerView: 2,
-		// freeMode: true,
+
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 	});
 	
 	let swiperTab = new Swiper('.kirovets_tabs__container',{
-		// mousewheel: {
-		//   invert: true,
-		// },
+	
 		thumbs: {
 			swiper: swiperTabThumbs
+		},
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
 		},
 	});
 
@@ -65,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	let InnerSliders = document.querySelectorAll('.kirovets_tabs__features');
 
-	const breakpoint = window.matchMedia( '(min-width:767px)' );
+	
 
 	const breakpointChecker = function() {
 		// if larger viewport and multi-row layout needed
@@ -78,521 +277,476 @@ document.addEventListener('DOMContentLoaded', function(){
 				if (swiperTabFeature != null) {
 					swiperTabFeature.destroy(true, true);
 				}
-				// fire small viewport version of swiper
-			// else if a small viewport and single column layout needed
 
-			for(let i = 0; i<InnerSliders.length; i++){
-				InnerSliders[i].removeEventListener('mouseover', setMainSwiperMouseOver);
-				InnerSliders[i].removeEventListener('mouseout', setMainSwiperMouseOut);		  	
-			}
+				for(let i = 0; i<InnerSliders.length; i++){
+					InnerSliders[i].removeEventListener('mouseover', setMainSwiperMouseOver);
+					InnerSliders[i].removeEventListener('mouseout', setMainSwiperMouseOut);		  	
+				}
+
+					// Анимация элементов
+				gsap.utils.toArray('.is-animate').forEach(element => {
+
+					let parallax = element.getAttribute('data-speed');
+					let speed = parallax * 100 + '%';
+					gsap.fromTo(element, {
+						duration: 5,
+						y: speed
+					}, {
+						y: "0%",
+						force3D: true,
+						scrollTrigger: {
+							trigger: element,
+							scrub: true,
+							// start: "top top"
+						} 
+					});
+				});
+
+				btnMore = document.querySelectorAll('.traktors__text-wrap--desktop .button-more--traktors');
+
 		} else if ( breakpoint.matches === false ) {
 			
 
-		
-			for(var i = 0; i<InnerSliders.length; i++){
+
+			for(let i = 0; i<InnerSliders.length; i++){
 				InnerSliders[i].addEventListener('mouseover', setMainSwiperMouseOver);
 				InnerSliders[i].addEventListener('mouseout', setMainSwiperMouseOut);		  	
 			}
 				
 			return enableSwiper();
 
+			btnMore = document.querySelectorAll('.traktors__text-wrap--tablet .button-more--traktors');
+
 		}
 	};
 
 
-
-	// keep an eye on viewport size changes
 	breakpoint.addListener(breakpointChecker);
-	// kickstart
+
 	breakpointChecker();
 
-})
+// Конец свайперов
 
 
-
-
-
-
-	// helper functions
-	const MathUtils = {
-			// map number x from range [a, b] to [c, d]
-			map: (x, a, b, c, d) => (x - a) * (d - c) / (b - a) + c,
-			// linear interpolation
-			lerp: (a, b, n) => (1 - n) * a + n * b
-	};
-
-	// body element
-	const body = document.body;
-	
-	// calculate the viewport size
-	let winsize;
-	const calcWinsize = () => winsize = {width: window.innerWidth, height: window.innerHeight};
-	calcWinsize();
-	// and recalculate on resize
-	window.addEventListener('resize', calcWinsize);
-
-	// scroll position and update function
-	let docScroll;
-	const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
-	window.addEventListener('scroll', getPageYScroll);
-
-	// Item
-	class Item {
-			constructor(el) {
-					// the .item element
-					this.DOM = {el: el};
-					// the inner image
-					this.DOM.image = this.DOM.el.querySelector('.parallax__img');
-					this.renderedStyles = {
-							// here we define which property will change as we scroll the page and the items is inside the viewport
-							// in this case we will be translating the image on the y-axis
-							// we interpolate between the previous and current value to achieve a smooth effect
-							innerTranslationY: {
-									// interpolated value
-									previous: 0, 
-									// current value
-									current: 0, 
-									// amount to interpolate
-									ease: 0.1,
-									// the maximum value to translate the image is set in a CSS variable (--overflow)
-									maxValue: parseInt(getComputedStyle(this.DOM.image).getPropertyValue('--overflow'), 10),
-									// current value setter
-									// the value of the translation will be:
-									// when the item's top value (relative to the viewport) equals the window's height (items just came into the viewport) the translation = minimum value (- maximum value)
-									// when the item's top value (relative to the viewport) equals "-item's height" (item just exited the viewport) the translation = maximum value
-									setValue: () => {
-											const maxValue = this.renderedStyles.innerTranslationY.maxValue;
-											const minValue = -1 * maxValue;
-											return Math.max(Math.min(MathUtils.map(this.props.top - docScroll, winsize.height, -1 * this.props.height, minValue, maxValue), maxValue), minValue)
-									}
-							}
-					};
-					// set the initial values
-					this.update();
-					// use the IntersectionObserver API to check when the element is inside the viewport
-					// only then the element translation will be updated
-					this.observer = new IntersectionObserver((entries) => {
-							entries.forEach(entry => this.isVisible = entry.intersectionRatio > 0);
-					});
-					this.observer.observe(this.DOM.el);
-					// init/bind events
-					this.initEvents();
-			}
-			update() {
-					// gets the item's height and top (relative to the document)
-					this.getSize();
-					// sets the initial value (no interpolation)
-					for (const key in this.renderedStyles ) {
-							this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key].setValue();
-					}
-					// translate the image
-					this.layout();
-			}
-			getSize() {
-					const rect = this.DOM.el.getBoundingClientRect();
-					this.props = {
-							// item's height
-							height: rect.height,
-							// offset top relative to the document
-							top: docScroll + rect.top 
-					}
-			}
-			initEvents() {
-					window.addEventListener('resize', () => this.resize());
-			}
-			resize() {
-					// on resize rest sizes and update the translation value
-					this.update();
-			}
-			render() {
-					// update the current and interpolated values
-					for (const key in this.renderedStyles ) {
-							this.renderedStyles[key].current = this.renderedStyles[key].setValue();
-							this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].ease);
-					}
-					// and translates the image
-					this.layout();
-			}
-			layout() {
-					// translates the image
-					this.DOM.image.style.transform = `translate3d(0,${this.renderedStyles.innerTranslationY.previous}%,0)`;
-			}
-	}
-
-	// SmoothScroll
-	class SmoothScroll {
-			constructor() {
-					// the <main> element
-					this.DOM = {main: document.querySelector('main')};
-					// the scrollable element
-					// we translate this element when scrolling (y-axis)
-					this.DOM.scrollable = this.DOM.main.querySelector('div[data-scroll]');
-					// the items on the page
-					this.items = [];
-					[...this.DOM.main.querySelectorAll('.parallax__item')].forEach(item => this.items.push(new Item(item)));
-					// here we define which property will change as we scroll the page
-					// in this case we will be translating on the y-axis
-					// we interpolate between the previous and current value to achieve the smooth scrolling effect
-					this.renderedStyles = {
-							translationY: {
-									// interpolated value
-									previous: 0, 
-									// current value
-									current: 0, 
-									// amount to interpolate
-									ease: 0.1,
-									// current value setter
-									// in this case the value of the translation will be the same like the document scroll
-									setValue: () => docScroll
-							}
-					};
-					// set the body's height
-					this.setSize();
-					// set the initial values
-					this.update();
-					// the <main> element's style needs to be modified
-					this.style();
-					// init/bind events
-					this.initEvents();
-					// start the render loop
-					requestAnimationFrame(() => this.render());
-			}
-			update() {
-					// sets the initial value (no interpolation) - translate the scroll value
-					for (const key in this.renderedStyles ) {
-							this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key].setValue();
-					}   
-					// translate the scrollable element
-					this.layout();
-			}
-			layout() {
-					// translates the scrollable element
-					this.DOM.scrollable.style.transform = `translate3d(0,${-1*this.renderedStyles.translationY.previous}px,0)`;
-			}
-			setSize() {
-					// set the heigh of the body in order to keep the scrollbar on the page
-					body.style.height = `${this.DOM.scrollable.scrollHeight}px`;
-			}
-			style() {
-					// the <main> needs to "stick" to the screen and not scroll
-					// for that we set it to position fixed and overflow hidden 
-					this.DOM.main.style.position = 'fixed';
-					this.DOM.main.style.width = this.DOM.main.style.height = '100%';
-					this.DOM.main.style.top = this.DOM.main.style.left = 0;
-					this.DOM.main.style.overflow = 'hidden';
-			}
-			initEvents() {
-					// on resize reset the body's height
-					window.addEventListener('resize', () => this.setSize());
-			}
-			render() {
-					// update the current and interpolated values
-					for (const key in this.renderedStyles ) {
-							this.renderedStyles[key].current = this.renderedStyles[key].setValue();
-							this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this.renderedStyles[key].current, this.renderedStyles[key].ease);
-					}
-					// and translate the scrollable element
-					this.layout();
-					
-					// for every item
-					for (const item of this.items) {
-							// if the item is inside the viewport call it's render function
-							// this will update the item's inner image translation, based on the document scroll value and the item's position on the viewport
-							if ( item.isVisible ) {
-									item.render();
-							}
-					}
-					
-					// loop..
-					requestAnimationFrame(() => this.render());
-			}
-	}
-
-	/***********************************/
-	/********** Preload stuff **********/
-
-	// Preload images
-	const preloadImages = () => {
-			return new Promise((resolve, reject) => {
-					imagesLoaded(document.querySelectorAll('.parallax__img'), {background: true}, resolve);
-			});
-	};
-	
-	// And then..
-	preloadImages().then(() => {
-			// Remove the loader
-			document.body.classList.remove('loading');
-			// Get the scroll position
-			getPageYScroll();
-			// Initialize the Smooth Scrolling
-			new SmoothScroll();
-	});
-
-
-
-
-	function visible(target, newClass) {
-	
-		let targetPosition = {
-			top: window.pageYOffset + target.getBoundingClientRect().top,
-			left: window.pageXOffset + target.getBoundingClientRect().left,
-			right: window.pageXOffset + target.getBoundingClientRect().right,
-			bottom: window.pageYOffset + target.getBoundingClientRect().bottom
-		},
-		
-		windowPosition = {
-			top: window.pageYOffset,
-			left: window.pageXOffset,
-			right: window.pageXOffset + document.documentElement.clientWidth,
-			bottom: window.pageYOffset + document.documentElement.clientHeight
-		};
-	
-		if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
-			targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
-			targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
-			targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
-				 target.classList.add(newClass);
-			} else {
-				target.classList.remove(newClass);
-			};
-	};
-
-	function animate(itemClass, animateClass){
-		let items = document.querySelectorAll(itemClass);
-		let pageFlag = document.querySelector('body').classList.contains('kirovets');
-			window.addEventListener('scroll', function() {
-			
-					for(let i = 0; i< items.length; i++){
-						visible (items[i], animateClass);	
-					
+// Плавный ссылки в годах
+	const makeNavLinksSmooth = ( ) => {
+		const navLinks = document.querySelectorAll( '.traktors__nav-link' );
+		const section  = document.querySelectorAll('.traktors');
+		for ( let n = 0; n<navLinks.length; n++ ) {
+			// if ( navLinks.hasOwnProperty( n ) ) {
+				navLinks[ n ].addEventListener( 'click', e => {
+					// const id = section[ n ].id;
+					e.preventDefault( );
 				
-					}
-			});
-				for(let i = 0; i< items.length; i++){
-					visible (items[i], animateClass);	
+			
+					scrollToTop(section[n]);
+				
+				} );
+			// }
+		}
+	}
+	
+// Наблюдение за ссылками при скролле
+	const spyScrolling = ( ) => {
+		const sections = document.querySelectorAll( '.traktors' );
+	
+			const scrollPos = scrollbar.offset.y
+	
+			// считывает или устанавливает количество пикселей, прокрученных от верха элемент 
+			for ( let s in sections )
+				if ( sections.hasOwnProperty( s ) && getCoords(sections[ s ]).top-100  <= scrollPos ) {
+
+					const id = sections[ s ].id;
+					document.querySelector( '.traktors__nav-link.active' ).classList.remove( 'active' );
+					document.querySelector( `a[href*=${ id }]` ).classList.add( 'active' );
+
 				}
-			
-				// document.addEventListener("DOMContentLoaded", function() {
-				
-				// 		for(let i = 0; i< items.length; i++){
-				// 			visible (items[i], animateClass);	
-				// 		}
-					
-				// });
+		
 	}
 
-		// animate('.traktors__number-icon', 'is-inview' );
+
+	// Скрытие / открытие навигации по годам
+	function showAndHideYearNav() {
+		let yearNav = document.querySelector('.traktors__nav');
+		if(yearNav){
+			document.addEventListener('DOMContentLoaded', function(){
+				yearNav.style.opacity = "0";
+			})
+			let containerNav = document.querySelector('.traktors__container');
+			let yearNavTopY = getCoords(yearNav).top;
+			let yearNavBottomY = getCoords(yearNav).bottom;		
+			let containerNavTopY = getCoords(containerNav).top;
+			let containerNavBottomY = getCoords(containerNav).bottom;
 	
+			if(yearNavTopY >= containerNavTopY && yearNavBottomY < containerNavBottomY){
+				yearNav.style.opacity = "1";
+				yearNav.style.pointerEvents = "auto";
+				yearNav.style.zIndex = "5";
+				spyScrolling( );
+		
+			}else if(yearNavTopY <= containerNavTopY || yearNavBottomY >= containerNavBottomY){
+				yearNav.style.opacity = "0";
+				yearNav.style.pointerEvents = "none";
+				yearNav.style.zIndex = "-1";
+			}
+			
+			makeNavLinksSmooth( );
+
+		}
+	}
+	
+		
+	
+
+
+	
+
+
+	// Видео
+	let videoMain = document.querySelector('.parallax__img-video');
+
+	if(videoMain){
+		let btnPlay = document.querySelector('.kirovets_button__video-controls--play');
+	
+		let btnSound = document.querySelector('.kirovets_button__video-controls--sound');
+
+
+		function playPauseMedia() {
+			if(videoMain.paused) {
+				videoMain.style.display = "block";
+				videoMain.play();
+			
+				btnPlay.classList.add('active');
+			} else {
+				videoMain.pause();
+				btnPlay.classList.remove('active');
+			}
+		}
+
+		function soundOnOffMedia(){
+			if(videoMain.muted){
+				videoMain.muted = false;
+				btnSound.classList.remove('active');
+			}else{
+				videoMain.muted = true;
+				btnSound.classList.add('active');
+			}
+		}
+
+		btnSound.addEventListener('click', soundOnOffMedia);
+		btnPlay.addEventListener('click', playPauseMedia);
+	}
+	
+
+	if(document.body.classList.contains("kirovets")){
+
+
+	// Анимация
+
 		gsap.utils.toArray('.traktors__number-icon').forEach(element => {
 			ScrollTrigger.create({
 				trigger: element,
+				scrub: true,
 				toggleClass: 'is-inview',
 				// this toggles the class again when you scroll back up:
 				toggleActions: 'play none none none',
 				// this removes the class when the scrolltrigger is passed:
-				once: true,
+				// once: true,
 			});
 		});
-	
-		
-	
+
+		gsap.utils.toArray('.traktors__info-wrap').forEach(element => {
+			ScrollTrigger.create({
+				trigger: element,
+				start: 'bottom bottom',
+				scrub: true,
+				toggleClass: 'is-inview-line',
+				// this toggles the class again when you scroll back up:
+				toggleActions: 'play none none none',
+				// this removes the class when the scrolltrigger is passed:
+				// once: true,
+			});
+		});
+		gsap.utils.toArray('.button-more--traktors').forEach(element => {
+			ScrollTrigger.create({
+				trigger: element,
+				start: 'bottom bottom',
+				scrub: true,
+				toggleClass: 'is-inview-line',
+				// this toggles the class again when you scroll back up:
+				toggleActions: 'play none none none',
+				// this removes the class when the scrolltrigger is passed:
+				// once: true,
+			});
+		});
 
 
+		gsap.fromTo(".title--inner-main",{
+			y: '130%',
+			rotateX: "-40deg",
+			opacity: 0 
+				}, {
+					y: "0%",
+				rotateX: 0,
+				opacity: 1,
 
+				duration: 2,
+				stagger: .13,
+				ease: "power3.out",
+				delay: .2,
 
-
-	function getCoords(elem) {
-
-		let box = elem.getBoundingClientRect();
-	
-		return {
-			top: Math.round(box.top + pageYOffset),
-			bottom: Math.round(box.bottom + pageYOffset)
-		};
-	}
-
-
-
-	
-	const makeNavLinksSmooth = ( ) => {
-		const navLinks = document.querySelectorAll( '.traktors__nav-link' );
-	
-		for ( let n in navLinks ) {
-			if ( navLinks.hasOwnProperty( n ) ) {
-				navLinks[ n ].addEventListener( 'click', e => {
-				
-					// e.preventDefault( );
-					
-					// document.querySelector( navLinks[ n ].hash )
-					// 	.scrollIntoView( {
-					// 		behavior: "smooth"
-					// 	} );
-					document.querySelector( '.active' ).classList.remove( 'active' );
-					navLinks[ n ].classList.add( 'active' );
-
-				} );
 			}
-		}
-	}
-	
-	const spyScrolling = ( ) => {
-		const sections = document.querySelectorAll( '.traktors' );
-	
-		// window.onscroll = ( ) => {
-			const scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
-	
-			// считывает или устанавливает количество пикселей, прокрученных от верха элемент 
-			for ( let s in sections )
-				if ( sections.hasOwnProperty( s ) && getCoords(sections[ s ]).top  <= scrollPos ) {
-
-					const id = sections[ s ].id;
-					document.querySelector( '.active' ).classList.remove( 'active' );
-					document.querySelector( `a[href*=${ id }]` ).classList.add( 'active' );
-				}
-		// }  
-	}
-
-	let yearNav = document.querySelector('.traktors__nav');
-	let containerNav = document.querySelector('.traktors__container');
-	
-	document.addEventListener('DOMContentLoaded', function(){
-		yearNav.style.opacity = "0";
-	})
-	window.addEventListener('scroll', function(){
-		let yearNavTopY = getCoords(yearNav).top;
-		let yearNavBottomY = getCoords(yearNav).bottom;
-
-		
-		let containerNavTopY = getCoords(containerNav).top;
-		let containerNavBottomY = getCoords(containerNav).bottom;
-
-		if(yearNavTopY >= containerNavTopY && yearNavBottomY < containerNavBottomY){
-			yearNav.style.opacity = "1";
-
-
-			spyScrolling( );
-			// makeNavLinksSmooth( );
-	
-
-		}else if(yearNavTopY <= containerNavTopY || yearNavBottomY >= containerNavBottomY){
-			yearNav.style.opacity = "0";
-		}
-	})
-	makeNavLinksSmooth( );
-	// makeNavLinksSmooth( );
-	// spyScrolling( );
-	
+		);
 
 
 
-	window.addEventListener("scroll", function(event) {
-		let	topDistance = this.pageYOffset;
-		let layers = document.querySelectorAll('.parallax__img--kirovets_about');
-
-			
-		for ( let i = 0;  i < layers.length; i++) {
-			let depth = layers[i].dataset.depth;
-			let movement = -(topDistance * depth);
-			let translate3d = 'translate3d(0, ' + movement + 'px, 0)';
-			layers[i].style['-webkit-transform'] = translate3d;
-			layers[i].style['-moz-transform'] = translate3d;
-			layers[i].style['-ms-transform'] = translate3d;
-			layers[i].style['-o-transform'] = translate3d;
-			layers[i].style.transform = translate3d;
-		}
-	});
-	
-
-
-	let btnPlay = document.querySelector('.kirovets_button__video-controls--play');
-	let videoMain = document.querySelector('.parallax__img-video');
-	let btnSound = document.querySelector('.kirovets_button__video-controls--sound');
-
-
-	function playPauseMedia() {
-		if(videoMain.paused) {
-			videoMain.style.display = "block";
-			videoMain.play();
-		
-			btnPlay.classList.add('active');
-		} else {
-			videoMain.pause();
-			btnPlay.classList.remove('active');
-		}
-	}
-
-	function soundOnOffMedia(){
-		if(videoMain.muted){
-			videoMain.muted = false;
-			btnSound.classList.remove('active');
-		}else{
-			videoMain.muted = true;
-			btnSound.classList.add('active');
-		}
-	}
-
-	btnSound.addEventListener('click', soundOnOffMedia);
-	btnPlay.addEventListener('click', playPauseMedia);
-
-	gsap.fromTo(".title--inner",{
+		gsap.fromTo(".title--inner",{
 		y: '130%',
 		rotateX: "-40deg",
 		opacity: 0 
+			}, {
+				y: "0%",
+			rotateX: 0,
+			opacity: 1,
+
+			duration: 2,
+			stagger: .13,
+			ease: "power3.out",
+			delay: .2,
+			// force3D: true,
+			scrollTrigger: {
+				trigger: ".title--inner",
+				// scrub: true,
+				start: "bottom bottom"
+			} 
+		}
+		);
+
+		gsap.fromTo(".footer__outer",{
+			y: '-20%',
+			}, {
+			y: "0%",
+			duration: 0.3,
+
+			ease: "none",
+			// pin: true,
+			// force3D: true,
+			scrollTrigger: {
+				trigger: ".kirovets_statistics",
+				start: 'bottom bottom',
+				// pin: true,
+				toggleActions: "play reverse play reverse"
+				// scrub: true,
+				// pinSpacing: false
+				// start: "top c"
+			} 
+		}
+		);
+
+
+	gsap.utils.toArray('.statictics--inner').forEach(element => {
+		gsap.fromTo(element, {
+			opacity: 0,
+			y: "25px"
 		}, {
 			y: "0%",
-		rotateX: 0,
-		opacity: 1,
-		duration: 2,
-		stagger: .13,
-		ease: "power3.out",
-		delay: .2,
-		// force3D: true,
-		scrollTrigger: {
-			trigger: ".title--inner",
-			start: "bottom bottom"
-		} 
-	}
-);
-
-
-
-
-gsap.utils.toArray('.statictics--inner').forEach(element => {
-	gsap.fromTo(element, {
-		y: "105%"
-	}, {
-		y: "0%",
-		duration: 3,
-		stagger: .2,
-		ease: "expo.out",
-		scrollTrigger: {
-			trigger: element,
-			start: "bottom bottom"
-		} 
+			duration: 1,
+			opacity: 1 ,
+			stagger: .2,
+			// ease: "ease",
+			scrollTrigger: {
+				trigger: element,
+				// scrub: true,
+				start: "bottom bottom"
+			} 
+		});
 	});
-});
+
+
+		gsap.fromTo(".title--inner-main",{
+			y: '130%',
+			rotateX: "-40deg",
+			opacity: 0 
+			}, {
+				y: "0%",
+			rotateX: 0,
+			opacity: 1,
+
+			duration: 2,
+			stagger: .13,
+			ease: "power3.out",
+			delay: .2,
+					
+		}
+	);
+
+	gsap.utils.toArray('.button-line').forEach(element => {
+		ScrollTrigger.create({
+			trigger: element,
+			toggleClass: 'is-inview',
+		});
+	});
+}
+
+
+
+let socialContainer = document.querySelector('.social__btn-list');
+if(socialContainer){
+	socialInteraction()
+}
+
+
+// Меню
+
+let burger = document.querySelector('.js-nav-toggle');
+
+if(burger){
+	let btnSearch = document.querySelector('.js-search-text');
+	let dropList = document.querySelectorAll('.js-dropdown');
+
+	let navList = document.querySelector('.nav_list');
+	let navLink = navList.querySelectorAll('.nav_link');
+
+	burger.addEventListener('click', function(){
+		document.body.classList.toggle('has-nav-open');
+		document.body.classList.remove('has-search-open');
+		scrollbarNav.setPosition(0, 0);
+
+		for (let i = 0; i < navLink.length; i++) {
+			navLink[i].addEventListener('mouseover', function() {
+				navLink[i].classList.add('active');
+			})
+			navLink[i].addEventListener('mouseleave', function() {
+				navLink[i].classList.remove('active');
+			})
+			
+		}
+	})
+	btnSearch.addEventListener('click', function(){
+		document.body.classList.toggle('has-search-open');
+		
+	})
+
+	if ( window.screen.width < 1199 ) {
+
+		for(let i = 0; i<dropList.length; i++){
+			dropList[i].addEventListener('click', function(event){
+				
+				// this.querySelector('.c-nav_dropdown').classList.add('active');
+				this.querySelector('.nav_dropdown').classList.toggle('active');
+
+				if(!this.contains(event.target)){
+					this.classList.remove('active');
+					this.querySelector('.js-dropdown-list').classList.remove('active');
+				}
+			})
+		}
+	}	
+}
+
+let popup = document.querySelectorAll('.popup_kirovets');
+
+			for(let i = 0; i<popup.length; i++){
+				let number = popup[i].querySelector('.traktors__number--popup');
+				let numbers = number.querySelectorAll('.traktors__number-icon');
+				for(let i = 0; i<numbers.length; i++){
+					numbers[i].classList.remove('is-inview');
+				}
+				btnMore[i].addEventListener('click', function(event){
+					event.preventDefault();
+					popup[i].classList.add('active');
+					for(let i = 0; i<numbers.length; i++){
+						numbers[i].classList.add('is-inview');
+					}
+					
+					let btnBack = popup[i].querySelector('.popup_kirovets__back');
+
+
+
+
+					btnBack.addEventListener('click', function(event){
+						popup[i].classList.remove('active');
+						for(let i = 0; i<numbers.length; i++){
+							numbers[i].classList.remove('is-inview');
+						}
+				});
+				
+					let btnClose = popup[i].querySelector('.popup_kirovets__close');
+
+					btnClose.addEventListener('click', function(event){
+							popup[i].classList.remove('active');
+							for(let i = 0; i<numbers.length; i++){
+								numbers[i].classList.remove('is-inview');
+							}
+					});
+
+			})
+
+			
+		}
+
+
+
 
 
 
 
 // accordion
-let acc = document.getElementsByClassName("akcioner-info__accordion-item--title-arrow");
+let acc = document.getElementsByClassName("akcioner-info__accordion-item");
 let menu = document.getElementsByClassName("akcioner-info__menu-icon");
+let contactNavItem = document.getElementsByClassName("contacts-sidebar__nav-item");
+let navItem = document.getElementsByClassName("contacts-navigation-list__item");
+let actionerNavItem = document.getElementsByClassName('akcioner-navigation-list__item-active');
+let contactsMenuItem = document.getElementsByClassName('contacts-navigation-list__item-active');
+let contactsMenu = document.getElementsByClassName("contacts-menu-container");
+
 let i;
+			
+			
 
 for (i = 0; i < acc.length; i++) {
 	acc[i].addEventListener("click", function() {
-		let item = this.parentElement;
-		item.parentNode.classList.toggle("active");
+		this.classList.toggle("active");
 	});
 }
 
 for (i = 0; i < menu.length; i++) {
 	menu[i].addEventListener("click", function() {
-		let item = this.parentElement;
-		item.parentNode.classList.toggle("active");
+		this.classList.toggle("active");
 	});
 }
+
+for (i = 0; i < contactsMenuItem.length; i++) {
+	contactsMenuItem[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+	});
+}
+
+for (i = 0; i < actionerNavItem.length; i++) {
+	actionerNavItem[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+	});
+}
+
+for (i = 0; i < contactNavItem.length; i++) {
+	contactNavItem[i].addEventListener("click", function() {
+		let current = document.getElementsByClassName("active");
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	});
+}
+
+for (i = 0; i < navItem.length; i++) {
+	navItem[i].addEventListener("click", function() {
+		let current = document.getElementsByClassName("contacts-navigation-list__item-active");
+		current[0].className = current[0].className.replace(" contacts-navigation-list__item-active", "");
+		this.className += " contacts-navigation-list__item-active";
+	});
+}
+
+
+
+
 
 
 

@@ -1,25 +1,22 @@
+
 .kirovets_main{
-	background-color: #18213D;
-	// background-image: url(../img/bg-main-mobile.jpg);
-	// background-position: center;
-	// background-size: cover;
-	// background-repeat: no-repeat;
-	// background-attachment: fixed;
+	// background-color: #18213D;
 	height: 435px;
-
+	// height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  // height: calc(var(--vh, 1vh) * 100);
+	// min-height: -webkit-fill-available;
 	position: relative;
-
-
 }
 
 .parallax__img--kirovets_main{
-	background-image: url(../img/bg-main-mobile.jpg);
+	background-image: url(../img/bg-main-mobile-2.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 .parallax__img-video{
 	display: none;
+	pointer-events: none;
 }
 .parallax__img-video.active{
 	display: block;
@@ -38,13 +35,17 @@
 .kirovets_main__title{
 	@extend %title-main-screen;
 	position: relative;
+	perspective: 600px;
 }
 
+.title--inner-main{
+	display: inline-block;
+}
 
 .button__video-controls-wrap{
 	position: absolute;
 	right: 4%;
-	bottom: 25px;
+	bottom: 15px;
 
 }
 .kirovets_button__video-controls{
@@ -67,12 +68,20 @@
 .kirovets_button__video-controls--sound.active{
 	background-image: url(../img/sound-on.svg);
 }
+@media(max-width: 359px){
+	.kirovets_main__title{
+		padding-bottom: 65px;
+	}
+
+}
 
 @media(min-width: 767px){
+
 	.kirovets_main{
-		// background-image: url(../img/bg-main-tablet.jpg);
-		min-height: 520px;
+
+		height: 520px;
 	}
+
 	.parallax__img--kirovets_main{
 		background-image: url(../img/bg-main-tablet.jpg);
 	}
@@ -86,7 +95,7 @@
 
 	.button__video-controls-wrap{
 		right: 5%;
-		bottom: 25px;
+		bottom: 20px;
 		
 	}
 	
@@ -94,8 +103,9 @@
 
 @media(min-width: 1280px){
 	.kirovets_main{
-		// background-image: url(../img/bg-main-laptop.jpg);
-		min-height: 720px;
+		height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+		height: calc(var(--vh, 1vh) * 100);
+		min-height: -webkit-fill-available;	
 	}
 	.parallax__img--kirovets_main{
 		background-image: url(../img/bg-main-laptop.jpg);
@@ -111,14 +121,8 @@
 	}
 	
 }
-@media(min-width: 1919px){
-	
-	.kirovets_main{
-		// background-image: url(../img/bg-main-desktop.jpg);
-		min-height: 900px;
+@media(min-width: 1680px){
 
-	
-	}
 	.parallax__img--kirovets_main{
 		background-image: url(../img/bg-main-desktop.jpg);
 	}
@@ -133,7 +137,7 @@
 		bottom: 45px;
 		
 	}
-	.kirovets_main__title{
-		padding-left: 60px;
-	}
+	// .kirovets_main__title{
+	// 	padding-left: 60px;
+	// }
 }
